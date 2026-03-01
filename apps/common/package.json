@@ -1,0 +1,15 @@
+{
+  "name": "@ai-en/common",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./config": "./config/index.ts",
+    "./types/word": "./types/word/index.ts"
+  }
+}

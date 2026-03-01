@@ -1,0 +1,134 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../libs/shared/src/generated/prisma"
+  moduleFormat = "cjs" // commonjs
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum TradeStatus {
+  NOT_PAY // 未支付, 默认值
+  WAIT_BUYER_PAY // 等待买家付款
+  TRADE_CLOSED // 交易关闭
+  TRADE_SUCCESS // 交易成功, 可退款
+  TRADE_FINISHED // 交易结束, 不可退款
+}
+
+// 用户表
+model User {
+  id              String           @id @default(cuid()) // 用户 ID
+  name            String // 用户名
+  email           String?          @unique // 邮箱
+  phone           String           @unique // 手机号
+  address         String? // 地址
+  password        String // 密码
+  avatar          String? // 头像
+  wordNumber      Int              @default(0) // 单词数量
+  dayNumber       Int              @default(0) // 打卡天数
+  createdAt       DateTime         @default(now()) // 创建时间
+  updatedAt       DateTime         @updatedAt // 更新时间
+  lastLoginAt     DateTime? // 最后登录时间
+  wordBookRecords WordBookRecord[]
+  paymentRecords  PaymentRecord[]
+  courseRecords   CourseRecord[]
+}
+
+// 记录已学习的单词
+model WordBookRecord {
+  id        String   @id @default(cuid()) // 记录 ID
+  wordId    String // 单词 ID
+  isMaster  Boolean  @default(false) // 是否掌握
+  createdAt DateTime @default(now()) // 创建时间
+  updatedAt DateTime @updatedAt // 更新时间
+  userId    String // 用户 ID 
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word      WordBook @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, wordId])
+}
+
+// 单词表
+model WordBook {
+  id              String           @id @default(cuid()) // 单词 ID
+  word            String // 单词
+  phonetic        String? // 音标
+  definition      String? // 定义
+  translation     String? // 翻译
+  pos             String? // 词性
+  collins         String? // 柯林斯
+  oxford          String? // 牛津
+  tag             String? // 标签
+  bnc             String? // BNC, 英国国家语料库
+  frq             String? // 频率
+  exchange        String? // 同义词
+  gk              Boolean? // 高考
+  zk              Boolean? // 中考
+  gre             Boolean? // GRE
+  toefl           Boolean? // TOEFL
+  ielts           Boolean? // IELTS
+  cet6            Boolean? // 英语六级
+  cet4            Boolean? // 英语四级
+  ky              Boolean? // 考研
+  createdAt       DateTime         @default(now()) // 创建时间
+  updatedAt       DateTime         @updatedAt // 更新时间
+  wordBookRecords WordBookRecord[]
+
+  @@index([word])
+  @@index([tag])
+  @@index([word, tag])
+}
+
+// 支付记录
+model PaymentRecord {
+  id            String         @id @default(cuid()) // 支付 ID
+  userId        String // 用户 ID
+  tradeNo       String? // 支付宝交易号
+  outTradeNo    String         @unique // 订单编号
+  amount        Decimal // 支付金额
+  subject       String // 支付主题
+  body          String // 支付内容
+  tradeStatus   TradeStatus    @default(NOT_PAY) // 支付状态, 默认未支付 NOT_PAY
+  sendPayTime   DateTime? // 支付时间
+  createdAt     DateTime       @default(now()) // 创建时间
+  updatedAt     DateTime       @updatedAt // 更新时间
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseRecords CourseRecord[]
+
+  @@index([tradeNo])
+}
+
+model CourseRecord {
+  id              String         @id @default(cuid()) // 课程记录 ID
+  userId          String // 用户 ID
+  courseId        String // 课程 ID
+  isPurchased     Boolean        @default(false) // 是否购买
+  createdAt       DateTime       @default(now()) // 创建时间
+  updatedAt       DateTime       @updatedAt // 更新时间
+  paymentRecordId String? // 支付记录 ID
+  paymentRecord   PaymentRecord? @relation(fields: [paymentRecordId], references: [id], onDelete: Cascade)
+  user            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course          Course         @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model Course {
+  id            String         @id @default(cuid()) // 课程 ID
+  name          String // 课程名
+  value         String // 课程 value
+  description   String? // 课程描述
+  teacher       String // 教师
+  url           String // 课程 url
+  price         Decimal // 课程价格
+  createdAt     DateTime       @default(now()) // 创建时间
+  updatedAt     DateTime       @updatedAt // 更新时间
+  courseRecords CourseRecord[]
+}
