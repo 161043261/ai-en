@@ -1,0 +1,10 @@
+// index.js.example
+// NODE_OPTIONS=--max_old_space_size=16864 node ./index.js
+const {
+  readLargeCsv,
+} = require("./dist/libs/shared/src/ecdict.js");
+const { join } = require("path");
+
+readLargeCsv(join(__dirname, "../../ecdict.csv")).catch(() =>
+  process.exit(1),
+);

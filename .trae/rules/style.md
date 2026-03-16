@@ -1,0 +1,3 @@
+- Do not use hard-coded color values anywhere in the tailwindcss, except for the theme color.
+- Do not use `px` anywhere in the tailwindcss; use `em` or `rem` instead.
+- I may accidentally use hard-coded color values or `px`. Please automatically detect and fix them.
