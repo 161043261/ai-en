@@ -1,0 +1,146 @@
+{
+  "settings": {
+    "title": "设置",
+    "subtitle": "更新头像和个人信息",
+    "reset": "重置",
+    "save": "保存",
+    "avatar": {
+      "title": "头像",
+      "select": "选择头像",
+      "tips": "支持 jpg/png/webp, 建议小于 2MB"
+    },
+    "account": {
+      "title": "账号",
+      "status": "登录状态",
+      "loggedIn": "已登录"
+    },
+    "personal": {
+      "title": "个人信息",
+      "username": "用户名",
+      "usernamePlaceholder": "请输入用户名",
+      "email": "邮箱",
+      "emailPlaceholder": "请输入邮箱",
+      "timingTask": "定时任务",
+      "timingTaskTime": "定时任务时间",
+      "timingTaskTimePlaceholder": "请选择定时任务时间",
+      "timingTaskTips": "Tips: 只有填写邮箱并且开启定时任务, 才能收到每日打卡提醒",
+      "address": "地址",
+      "addressPlaceholder": "请输入地址",
+      "bio": "签名",
+      "bioPlaceholder": "个性签名"
+    },
+    "danger": {
+      "title": "危险操作",
+      "logout": "退出登录",
+      "logoutDesc": "清空本地登录状态",
+      "logoutBtn": "退出"
+    },
+    "messages": {
+      "selectFile": "请选择文件",
+      "emailFormatError": "邮箱格式错误",
+      "updateSuccess": "更新成功",
+      "logoutConfirmTitle": "提示",
+      "logoutConfirmText": "是否退出登录"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "欢迎登录",
+      "subtitle": "请填写以下信息以完成登录",
+      "phone": "请输入手机号",
+      "password": "请输入密码",
+      "submit": "登录",
+      "success": "登录成功",
+      "forgotPassword": "忘记密码？"
+    },
+    "register": {
+      "title": "欢迎注册",
+      "subtitle": "请填写以下信息以完成注册",
+      "username": "请输入用户名",
+      "phone": "请输入手机号",
+      "email": "请输入邮箱（可选）",
+      "password": "请输入密码",
+      "submit": "注册",
+      "success": "注册成功"
+    },
+    "rules": {
+      "phoneRequired": "请输入手机号",
+      "phoneInvalid": "请输入正确的手机号",
+      "passwordRequired": "请输入密码",
+      "passwordLength": "密码长度为 6 到 10",
+      "usernameRequired": "请输入用户名",
+      "usernameLength": "用户名长度为 4 到 10"
+    }
+  },
+  "profile": {
+    "anonymous": "未登录",
+    "loginTip": "登录后可以同步学习进度与打卡数据",
+    "wordCount": "单词数量",
+    "dayCount": "打卡天数",
+    "goLogin": "去登录",
+    "personalData": "个人资料",
+    "logout": "退出登录",
+    "logoutConfirm": "确定退出登录吗"
+  },
+  "home": {
+    "stats": {
+      "students": "学员数量",
+      "courses": "课程数量",
+      "satisfaction": "学员满意度",
+      "hours": "学习时长 (小时)"
+    },
+    "features": {
+      "ai": {
+        "title": "AI 沉浸学习",
+        "desc": "沉浸式场景，在英文环境中学习英语，告别机械式背诵"
+      },
+      "dialog": {
+        "title": "智能对话练习",
+        "desc": "AI 实时反馈，个性化陪伴对话，随时随地练习口语"
+      },
+      "memory": {
+        "title": "科学单词记忆",
+        "desc": "基于艾宾浩斯遗忘曲线，制定复习计划，确保单词持久化记忆"
+      }
+    },
+    "hero": {
+      "tag": "坚持 21 天学习打卡",
+      "title1": "通过和 AI 对话，提高英语水平",
+      "title2": "超 1000000 学员选择，提高英语水平",
+      "startBtn": "立刻学习",
+      "courseBtn": "查看课程"
+    },
+    "why": {
+      "title": "为什么选择我们？",
+      "desc": "通过科学验证，AI 英语学习方式显著优于传统英语学习方式"
+    },
+    "core": {
+      "tag": "核心优势",
+      "title": "重新定义英语学习方式",
+      "desc": "结合 AI 技术与语言学研究，打造沉浸式学习体验"
+    }
+  },
+  "wordBook": {
+    "title": "单词列表",
+    "source": "词典来源：牛津、柯林斯、BNC、FRQ、高考、中考、GRE、TOEFL、IELTS、大学英语六级、大学英语四级、考研",
+    "searchPlaceholder": "请输入单词",
+    "searchBtn": "搜索",
+    "tags": {
+      "gk": "高考",
+      "zk": "中考",
+      "gre": "GRE",
+      "toefl": "TOEFL",
+      "ielts": "IELTS",
+      "cet4": "四级",
+      "cet6": "六级",
+      "ky": "考研"
+    }
+  },
+  "nav": {
+    "home": "主页",
+    "ai": "AI",
+    "wordBook": "词典",
+    "course": "课程",
+    "settings": "设置"
+  }
+}

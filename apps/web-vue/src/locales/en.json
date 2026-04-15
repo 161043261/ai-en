@@ -1,0 +1,146 @@
+{
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Update avatar and personal information",
+    "reset": "Reset",
+    "save": "Save",
+    "avatar": {
+      "title": "Avatar",
+      "select": "Select Avatar",
+      "tips": "Supports jpg/png/webp, recommended under 2MB"
+    },
+    "account": {
+      "title": "Account",
+      "status": "Login Status",
+      "loggedIn": "Logged In"
+    },
+    "personal": {
+      "title": "Personal Information",
+      "username": "Username",
+      "usernamePlaceholder": "Please enter username",
+      "email": "Email",
+      "emailPlaceholder": "Please enter email",
+      "timingTask": "Scheduled Task",
+      "timingTaskTime": "Scheduled Task Time",
+      "timingTaskTimePlaceholder": "Please select scheduled task time",
+      "timingTaskTips": "Tips: You must fill in your email and enable the scheduled task to receive daily check-in reminders",
+      "address": "Address",
+      "addressPlaceholder": "Please enter address",
+      "bio": "Bio",
+      "bioPlaceholder": "Personal signature"
+    },
+    "danger": {
+      "title": "Danger Zone",
+      "logout": "Log Out",
+      "logoutDesc": "Clear local login status",
+      "logoutBtn": "Logout"
+    },
+    "messages": {
+      "selectFile": "Please select a file",
+      "emailFormatError": "Invalid email format",
+      "updateSuccess": "Update successful",
+      "logoutConfirmTitle": "Notice",
+      "logoutConfirmText": "Are you sure you want to log out?"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Please fill in the information below to login",
+      "phone": "Enter your phone number",
+      "password": "Enter your password",
+      "submit": "Login",
+      "success": "Login successful",
+      "forgotPassword": "Forgot Password?"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Please fill in the information below to register",
+      "username": "Enter your username",
+      "phone": "Enter your phone number",
+      "email": "Enter your email (optional)",
+      "password": "Enter your password",
+      "submit": "Register",
+      "success": "Registration successful"
+    },
+    "rules": {
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Invalid phone number format",
+      "passwordRequired": "Password is required",
+      "passwordLength": "Password must be 6-10 characters long",
+      "usernameRequired": "Username is required",
+      "usernameLength": "Username must be 4-10 characters long"
+    }
+  },
+  "profile": {
+    "anonymous": "Anonymous",
+    "loginTip": "Log in to sync your learning progress and check-in data",
+    "wordCount": "Words Learned",
+    "dayCount": "Days Checked In",
+    "goLogin": "Log In",
+    "personalData": "Profile",
+    "logout": "Log Out",
+    "logoutConfirm": "Are you sure you want to log out?"
+  },
+  "home": {
+    "stats": {
+      "students": "Students",
+      "courses": "Courses",
+      "satisfaction": "Satisfaction",
+      "hours": "Learning Hours"
+    },
+    "features": {
+      "ai": {
+        "title": "AI Immersive Learning",
+        "desc": "Immersive scenarios to learn English in an English environment, say goodbye to mechanical memorization."
+      },
+      "dialog": {
+        "title": "Smart Dialogue Practice",
+        "desc": "Real-time AI feedback, personalized companion dialogue, practice speaking anytime, anywhere."
+      },
+      "memory": {
+        "title": "Scientific Word Memory",
+        "desc": "Based on the Ebbinghaus forgetting curve, develop a review plan to ensure long-lasting word memory."
+      }
+    },
+    "hero": {
+      "tag": "Stick to 21 days of learning",
+      "title1": "Improve your English by talking to AI",
+      "title2": "Chosen by over 1,000,000 students to improve English",
+      "startBtn": "Start Learning",
+      "courseBtn": "View Courses"
+    },
+    "why": {
+      "title": "Why Choose Us?",
+      "desc": "Scientifically proven, the AI English learning method is significantly superior to traditional English learning methods."
+    },
+    "core": {
+      "tag": "Core Advantages",
+      "title": "Redefine English Learning",
+      "desc": "Combining AI technology with linguistic research to create an immersive learning experience."
+    }
+  },
+  "wordBook": {
+    "title": "Word List",
+    "source": "Dictionary Sources: Oxford, Collins, BNC, FRQ, Gaokao, Zhongkao, GRE, TOEFL, IELTS, CET-6, CET-4, Kaoyan",
+    "searchPlaceholder": "Enter a word",
+    "searchBtn": "Search",
+    "tags": {
+      "gk": "Gaokao",
+      "zk": "Zhongkao",
+      "gre": "GRE",
+      "toefl": "TOEFL",
+      "ielts": "IELTS",
+      "cet4": "CET-4",
+      "cet6": "CET-6",
+      "ky": "Kaoyan"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "ai": "AI",
+    "wordBook": "Dictionary",
+    "course": "Courses",
+    "settings": "Settings"
+  }
+}

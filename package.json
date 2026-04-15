@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "dayjs": "^1.11.20",
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/md5": "^2.3.6",
+    "concurrently": "^9.2.1"
+  },
+  "scripts": {
+    "web:dev": "pnpm --filter @ai-en/web dev",
+    "web-vue:dev": "pnpm --filter @ai-en/web-vue dev",
+    "server:dev": "pnpm --filter @ai-en/server dev",
+    "dev": "concurrently \"pnpm web-vue:dev\" \"pnpm server:dev\"",
+    "web:format": "pnpm --filter @ai-en/web format",
+    "web-vue:format": "pnpm --filter @ai-en/web-vue format",
+    "server:format": "pnpm --filter @ai-en/server format",
+    "format": "concurrently \"pnpm web:format\" \"pnpm web-vue:format\" \"pnpm server:format\""
+  }
+}

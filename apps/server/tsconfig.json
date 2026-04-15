@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "types": ["node"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    "rootDir": "./",
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*", "eslint.config.mjs", "prisma.config.ts"],
+  "exclude": ["node_modules"]
+}
