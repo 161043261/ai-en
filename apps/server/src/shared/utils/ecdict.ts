@@ -1,69 +1,57 @@
-import { createReadStream } from "fs";
+import { createReadStream } from "node:fs";
+import { createInterface } from "node:readline";
 import iconv from "iconv-lite";
-import { createInterface } from "readline";
-import { prisma } from "../prisma/index.js";
+import {
+  createWordBookImportRow,
+  type WordBookImportRow,
+} from "./ecdict-row.js";
 import { validateWordBookCsvHeaders } from "./word-book-csv-schema.js";
+import {
+  createWordBookImportPool,
+  getDefaultWordBookImportWorkerCount,
+} from "./word-book-import-worker-pool.js";
 
-function parseCsvLine(line: string) {
-  const res: string[] = [];
-  let cur = "";
-  let inQuotes = false;
-  for (const char of line) {
-    if (char === '"') {
-      inQuotes = !inQuotes;
-    } else if (char === "," && !inQuotes) {
-      res.push(cur);
-      cur = "";
-    } else {
-      cur += char;
-    }
-  }
-  res.push(cur);
-  return res;
+const batchSize = 2000;
+
+export interface ReadLargeCsvOptions {
+  readonly workerCount?: number;
 }
 
-function parseTagToBoolean(tagValue: string) {
-  const tags = tagValue
-    ? tagValue.split(" ").filter((item) => item.trim() !== "")
-    : [];
-  return {
-    zk: tags.includes("zk"),
-    gk: tags.includes("gk"),
-    cet4: tags.includes("cet4"),
-    cet6: tags.includes("cet6"),
-    ky: tags.includes("ky"),
-    toefl: tags.includes("toefl"),
-    ielts: tags.includes("ielts"),
-    gre: tags.includes("gre"),
-  };
+export interface ReadLargeCsvResult {
+  readonly insertedRows: number;
+  readonly processedRows: number;
+  readonly workerCount: number;
 }
 
-export async function readLargeCsv(filepath: string) {
-  const BATCH_SIZE = 2000;
+export async function readLargeCsv(
+  filepath: string,
+  options: ReadLargeCsvOptions = {},
+): Promise<ReadLargeCsvResult> {
+  const workerCount =
+    options.workerCount ?? getDefaultWordBookImportWorkerCount();
+  const maxInFlightBatches = workerCount * 2;
+  const workerPool = createWordBookImportPool({ workerCount });
+  const pendingBatches = new Set<Promise<void>>();
   let lineCount = 0;
   let headers: string[] = [];
-  let batch: {
-    zk: boolean;
-    gk: boolean;
-    cet4: boolean;
-    cet6: boolean;
-    ky: boolean;
-    toefl: boolean;
-    ielts: boolean;
-    gre: boolean;
-    word: string;
-    phonetic: string | null;
-    definition: string | null;
-    translation: string | null;
-    pos: string | null;
-    collins: string | null;
-    oxford: string | null;
-    tag: string | null;
-    bnc: string | null;
-    frq: string | null;
-    exchange: string | null;
-  }[] = [];
+  let batch: WordBookImportRow[] = [];
   let totalInserted = 0;
+
+  async function scheduleBatch(rows: readonly WordBookImportRow[]) {
+    const task = workerPool
+      .use(async (worker) => {
+        totalInserted += await worker.importBatch(rows);
+      })
+      .finally(() => {
+        pendingBatches.delete(task);
+      });
+    pendingBatches.add(task);
+
+    if (pendingBatches.size >= maxInFlightBatches) {
+      await Promise.race(pendingBatches);
+    }
+  }
+
   try {
     const fileStream = createReadStream(filepath).pipe(
       iconv.decodeStream("utf-8"),
@@ -84,49 +72,30 @@ export async function readLargeCsv(filepath: string) {
         }
         continue;
       }
-      const values = parseCsvLine(line);
-      const rowData: Record<(typeof headers)[number], string> = {};
-      headers.forEach((header, index) => {
-        rowData[header] = values[index] ?? "";
-      });
-      const booleanFields = parseTagToBoolean(rowData.tag);
-      const wordData = {
-        ...booleanFields,
-        word: rowData.word || "",
-        phonetic: rowData.phonetic || null,
-        definition: rowData.definition || null,
-        translation: rowData.translation || null,
-        pos: rowData.pos || null,
-        collins: rowData.collins || null,
-        oxford: rowData.oxford || null,
-        tag: rowData.tag || null,
-        bnc: rowData.bnc || null,
-        frq: rowData.frq || null,
-        exchange: rowData.exchange || null,
-      };
-      batch.push(wordData);
-      if (batch.length >= BATCH_SIZE) {
-        await prisma.wordBook.createMany({
-          data: batch,
-          skipDuplicates: true,
-        });
-        totalInserted += batch.length;
+      batch.push(createWordBookImportRow(headers, line));
+      if (batch.length >= batchSize) {
+        await scheduleBatch(batch);
         batch = [];
       }
     }
     if (batch.length > 0) {
-      await prisma.wordBook.createMany({
-        data: batch,
-        skipDuplicates: true,
-      });
-      totalInserted += batch.length;
+      await scheduleBatch(batch);
     }
+    await Promise.all(pendingBatches);
     console.log(
-      `Processed ${(lineCount - 1).toLocaleString()} lines. Inserted ${totalInserted.toLocaleString()} records`,
+      `Processed ${(lineCount - 1).toLocaleString()} lines. Inserted ${totalInserted.toLocaleString()} records with ${workerCount.toLocaleString()} workers.`,
     );
+    return {
+      insertedRows: totalInserted,
+      processedRows: lineCount - 1,
+      workerCount,
+    };
   } catch (err) {
     const errorMessage = err instanceof Error ? err.message : "Unknown error";
     console.error("Error:", errorMessage);
     throw new Error(`Failed to read large CSV file: ${errorMessage}`);
+  } finally {
+    await workerPool.drain();
+    await workerPool.clear();
   }
 }

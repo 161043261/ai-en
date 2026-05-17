@@ -259,7 +259,7 @@ Tests:
 Completed notes:
 
 - Added request id middleware that generates or preserves `x-request-id`.
-- Added `/ready` dependency checks for PostgreSQL, Redis, MinIO, and AI configuration.
+- Added `/api/v1/ready` dependency checks for PostgreSQL, Redis, MinIO, and AI configuration.
 - Added Prisma migration, deploy, validation, and seed scripts.
 - Added a deterministic course seed script that updates by existing course id or creates missing defaults.
 - Added CI script coverage for build, test, lint, and Prisma validation.
@@ -432,7 +432,7 @@ Deliverables:
 
 Tests:
 
-- `/ready` is green in staging.
+- `/api/v1/ready` is green in staging.
 - Digest email is delivered for a controlled test user.
 - Avatar upload stores and returns a readable object URL.
 - Tracker endpoints persist records that can be queried from the database.
@@ -441,7 +441,7 @@ Completed notes:
 
 - Added `pnpm staging:smoke` as the executable staging verification entrypoint.
 - Added a Zod-validated smoke configuration for `STAGING_BASE_URL` and `STAGING_SMOKE_TIMEOUT_MS`.
-- Added automated staging checks for `/health` and `/ready`.
+- Added automated staging checks for `/api/v1/health` and `/api/v1/ready`.
 - Added required staging environment key reporting for PostgreSQL, Redis, MinIO, AI, SMTP, and payment notify boundaries.
 - Added manual check reporting with owners and rollback criteria for digest email, avatar upload, tracker persistence, and payment notify boundaries.
 - Documented staging smoke usage and deployment gating in `README.md`.
@@ -546,7 +546,7 @@ Completed notes:
 
 Status: completed.
 
-Goal: make `/ready` and staging smoke reports reflect the selected AI provider.
+Goal: make `/api/v1/ready` and staging smoke reports reflect the selected AI provider.
 
 Deliverables:
 
@@ -809,7 +809,7 @@ Completed notes:
 
 Status: completed.
 
-Goal: expose payment configuration readiness through `/ready` so staging and load balancer checks can detect broken Alipay configuration before traffic reaches checkout.
+Goal: expose payment configuration readiness through `/api/v1/ready` so staging and load balancer checks can detect broken Alipay configuration before traffic reaches checkout.
 
 Deliverables:
 
@@ -832,7 +832,7 @@ Completed notes:
 - Moved AI provider readiness to `src/operations/ai-readiness.ts`.
 - Added payment readiness in `src/operations/payment-readiness.ts`.
 - Added payment readiness to `defaultReadinessChecks()`.
-- Added focused payment readiness tests and kept existing `/ready` tests passing.
+- Added focused payment readiness tests and kept existing `/api/v1/ready` tests passing.
 - Documented the payment dependency in README deployment guidance.
 
 ## Milestone 26: API Compatibility Closure

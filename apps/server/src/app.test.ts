@@ -5,7 +5,7 @@ describe("server app", () => {
   test("returns health status", async () => {
     const app = createApp();
 
-    const response = await app.request("/health");
+    const response = await app.request("/api/v1/health");
     const body = await response.json();
 
     expect(response.status).toBe(200);

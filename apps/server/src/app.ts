@@ -42,8 +42,8 @@ export const createApp = (options: AppOptions = {}) => {
   app.use("*", pinoLogger({ pino }));
   app.use("*", cors());
 
-  app.get("/health", (c) => c.json(success({ status: "ok" })));
-  app.get("/ready", async (c) => {
+  app.get("/api/v1/health", (c) => c.json(success({ status: "ok" })));
+  app.get("/api/v1/ready", async (c) => {
     const report = await createReadinessReport(readinessChecks);
     const status = report.status === "ready" ? 200 : 503;
     return c.json(

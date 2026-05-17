@@ -13,10 +13,12 @@ import {
   type ReactErrorBoundaryProps,
 } from "@lark-sentry/core/react";
 
-init({ dsn: "/sentry", visitorId: "" });
-pluginEnable(PerformancePlugin);
-pluginEnable(ScreenRecordPlugin);
-pluginEnable(ExposurePlugin);
+if (!import.meta.env.DEV) {
+  init({ dsn: "/sentry", visitorId: "" });
+  pluginEnable(PerformancePlugin);
+  pluginEnable(ScreenRecordPlugin);
+  pluginEnable(ExposurePlugin);
+}
 
 const boundaryProps: ReactErrorBoundaryProps = {
   fallback: <ErrorState />,
@@ -41,8 +43,12 @@ async function enableMocking(): Promise<void> {
 
 void enableMocking().then(() => {
   createRoot(rootElement).render(
-    <ReactErrorBoundary {...boundaryProps}>
+    import.meta.env.DEV ? (
       <AppRoot />
-    </ReactErrorBoundary>,
+    ) : (
+      <ReactErrorBoundary {...boundaryProps}>
+        <AppRoot />
+      </ReactErrorBoundary>
+    ),
   );
 });

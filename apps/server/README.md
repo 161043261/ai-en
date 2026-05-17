@@ -16,7 +16,7 @@ pnpm db:seed
 pnpm dev
 ```
 
-Open `http://localhost:3000/health` for the basic health check.
+Open `http://localhost:3000/api/v1/health` for the basic health check.
 
 ## Commands
 
@@ -47,8 +47,8 @@ required headers.
 
 ## Readiness
 
-- `GET /health` verifies that the Hono process can serve requests.
-- `GET /ready` verifies PostgreSQL, Redis, MinIO, and provider-specific AI configuration.
+- `GET /api/v1/health` verifies that the Hono process can serve requests.
+- `GET /api/v1/ready` verifies PostgreSQL, Redis, MinIO, and provider-specific AI configuration.
 - DeepSeek readiness requires `DEEPSEEK_API_KEY`.
 - Ollama readiness requires `OLLAMA_MODEL`, `OLLAMA_REASONER_MODEL`, and a reachable `OLLAMA_BASE_URL`.
 - Ollama readiness calls `/api/tags` and verifies that the configured chat and reasoning models are installed locally.
@@ -62,7 +62,7 @@ required headers.
 STAGING_BASE_URL=https://staging.example.com pnpm staging:smoke
 ```
 
-- Automated checks call `/health` and `/ready` on the staging Hono server.
+- Automated checks call `/api/v1/health` and `/api/v1/ready` on the staging Hono server.
 - The report lists required staging env keys for PostgreSQL, Redis, MinIO, provider-specific AI, SMTP when `EMAIL_ENABLED=true`, and Alipay when `ALIPAY_ENABLED=true`.
 - The report also records manual checks for digest email, avatar upload, tracker persistence, and payment notify boundary behavior.
 - A failed automated check exits with status code `1`.
@@ -88,7 +88,7 @@ STAGING_BASE_URL=https://staging.example.com pnpm staging:smoke
 - `OLLAMA_BASE_URL` defaults to `http://127.0.0.1:11434`.
 - `OLLAMA_MODEL` defaults to `qwen3.5`.
 - `OLLAMA_REASONER_MODEL` defaults to `deepseek-r1`.
-- `/ready` verifies that both configured Ollama models are available from `OLLAMA_BASE_URL`.
+- `/api/v1/ready` verifies that both configured Ollama models are available from `OLLAMA_BASE_URL`.
 - `deepThink=true` uses the DeepSeek reasoner model for DeepSeek, or `OLLAMA_REASONER_MODEL` for Ollama when configured.
 - Set `BOCHA_ENABLED=true` to allow request-level `webSearch=true` to call Bocha search.
 - Set `BOCHA_ENABLED=false` to ignore request-level `webSearch=true` and avoid network search calls.
@@ -135,13 +135,13 @@ Alipay release checks:
 - Run `pnpm staging:smoke` against staging before switching traffic.
 - Run `pnpm db:deploy` against the target database before switching traffic.
 - Run `pnpm db:seed` when bootstrapping a new environment or refreshing course defaults.
-- Configure external dependencies before enabling `/ready` in load balancer checks.
-- `/ready` reports payment configuration as `payment`; enabled Alipay mode fails readiness when required credentials or URLs are invalid.
+- Configure external dependencies before enabling `/api/v1/ready` in load balancer checks.
+- `/api/v1/ready` reports payment configuration as `payment`; enabled Alipay mode fails readiness when required credentials or URLs are invalid.
 
 ## Rollout
 
 - Start the Hono server beside the old Nest services and keep traffic on Nest.
-- Verify `/health`, `/ready`, login, course list, learning access, payment create, tracker, and AI prompt routes.
+- Verify `/api/v1/health`, `/api/v1/ready`, login, course list, learning access, payment create, tracker, and AI prompt routes.
 - Send a small percentage of traffic to Hono and monitor request ids, response codes, trusted payment notify behavior, digest jobs, and email delivery.
 - Increase traffic gradually after error rates and latency match the Nest baseline.
 - Roll back by routing traffic back to the Nest services; keep database migrations backward compatible until the rollout is complete.

@@ -23,7 +23,7 @@ describe("createApiClient", () => {
       timeoutMs: 1000,
     });
 
-    await expect(client.get("/health", ResponseSchema)).resolves.toEqual({
+    await expect(client.get("/api/v1/health", ResponseSchema)).resolves.toEqual({
       value: "ok",
     });
   });
@@ -35,9 +35,9 @@ describe("createApiClient", () => {
       timeoutMs: 1000,
     });
 
-    await expect(client.get("/health", ResponseSchema)).rejects.toBeInstanceOf(
-      NetworkRequestError,
-    );
+    await expect(
+      client.get("/api/v1/health", ResponseSchema),
+    ).rejects.toBeInstanceOf(NetworkRequestError);
   });
 
   test("throws non-auth HTTP failures without refresh", async () => {
@@ -48,9 +48,9 @@ describe("createApiClient", () => {
       timeoutMs: 1000,
     });
 
-    await expect(client.get("/health", ResponseSchema)).rejects.toBeInstanceOf(
-      HttpRequestError,
-    );
+    await expect(
+      client.get("/api/v1/health", ResponseSchema),
+    ).rejects.toBeInstanceOf(HttpRequestError);
   });
 
   test("refreshes access tokens and retries one auth failure", async () => {

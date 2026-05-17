@@ -110,8 +110,18 @@ export const createStagingSmokeReport = async ({
   readonly fetchImpl?: FetchLike;
 }): Promise<StagingSmokeReport> => {
   const automatedChecks = await Promise.all([
-    runHttpCheck("health", joinUrl(baseUrl, "/health"), fetchImpl, timeoutMs),
-    runHttpCheck("readiness", joinUrl(baseUrl, "/ready"), fetchImpl, timeoutMs),
+    runHttpCheck(
+      "health",
+      joinUrl(baseUrl, "/api/v1/health"),
+      fetchImpl,
+      timeoutMs,
+    ),
+    runHttpCheck(
+      "readiness",
+      joinUrl(baseUrl, "/api/v1/ready"),
+      fetchImpl,
+      timeoutMs,
+    ),
   ]);
 
   return {

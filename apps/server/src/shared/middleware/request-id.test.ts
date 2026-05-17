@@ -5,7 +5,7 @@ describe("request id middleware", () => {
   test("generates an x-request-id response header", async () => {
     const app = createApp({ readinessChecks: [] });
 
-    const response = await app.request("/health");
+    const response = await app.request("/api/v1/health");
 
     expect(response.headers.get("x-request-id")).toBeTruthy();
   });
@@ -14,7 +14,7 @@ describe("request id middleware", () => {
     const app = createApp({ readinessChecks: [] });
     const requestId = "request-123";
 
-    const response = await app.request("/health", {
+    const response = await app.request("/api/v1/health", {
       headers: { "x-request-id": requestId },
     });
 

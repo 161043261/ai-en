@@ -107,14 +107,14 @@ describe("staging smoke report", () => {
     });
     expect(fetchImpl).toHaveBeenNthCalledWith(
       1,
-      "https://staging.example.com/health",
+      "https://staging.example.com/api/v1/health",
       expect.objectContaining({
         signal: expect.objectContaining({ aborted: false }),
       }),
     );
     expect(fetchImpl).toHaveBeenNthCalledWith(
       2,
-      "https://staging.example.com/ready",
+      "https://staging.example.com/api/v1/ready",
       expect.objectContaining({
         signal: expect.objectContaining({ aborted: false }),
       }),

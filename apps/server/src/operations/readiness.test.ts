@@ -15,7 +15,7 @@ describe("readiness endpoint", () => {
   test("returns ready when every dependency is available", async () => {
     const app = createApp({ readinessChecks: [createCheck(true)] });
 
-    const response = await app.request("/ready");
+    const response = await app.request("/api/v1/ready");
     const body = await response.json();
 
     expect(response.status).toBe(200);
@@ -32,7 +32,7 @@ describe("readiness endpoint", () => {
   test("returns unavailable when one dependency fails", async () => {
     const app = createApp({ readinessChecks: [createCheck(false)] });
 
-    const response = await app.request("/ready");
+    const response = await app.request("/api/v1/ready");
     const body = await response.json();
 
     expect(response.status).toBe(503);

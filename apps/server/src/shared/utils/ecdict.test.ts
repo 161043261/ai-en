@@ -1,4 +1,5 @@
 import { describe, expect, test } from "vitest";
+import { createWordBookImportRow, parseCsvLine } from "./ecdict-row.js";
 import {
   requiredWordBookCsvHeaders,
   validateWordBookCsvHeaders,
@@ -26,6 +27,43 @@ describe("word-book CSV validation", () => {
         "frq",
         "exchange",
       ],
+    });
+  });
+
+  test("parses quoted CSV fields without splitting inner commas", () => {
+    expect(parseCsvLine('hello,"a,b",world')).toEqual([
+      "hello",
+      "a,b",
+      "world",
+    ]);
+  });
+
+  test("creates validated import rows from ECDICT fields", () => {
+    expect(
+      createWordBookImportRow(
+        requiredWordBookCsvHeaders,
+        [
+          "abandon",
+          "abandon",
+          "give up",
+          "give up translation",
+          "v",
+          "2",
+          "1",
+          "cet4 cet6 ky",
+          "3000",
+          "100",
+          "abandoned",
+        ].join(","),
+      ),
+    ).toMatchObject({
+      cet4: true,
+      cet6: true,
+      definition: "give up",
+      ky: true,
+      phonetic: "abandon",
+      tag: "cet4 cet6 ky",
+      word: "abandon",
     });
   });
 });
