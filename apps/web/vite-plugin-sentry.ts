@@ -70,7 +70,7 @@ export default function sentryPlugin(): Plugin {
       createSentryLogger(logFile, fileStream);
 
       server.middlewares.use((req, res, next) => {
-        if (req.url === "/api/log" && req.method === "POST") {
+        if (req.url === "/sentry" && req.method === "POST") {
           let body = "";
           req.on("data", (chunk: unknown) => {
             body = appendChunk(body, chunk);

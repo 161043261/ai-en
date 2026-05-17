@@ -166,8 +166,8 @@ importers:
         specifier: workspace:*
         version: link:../common
       '@lark-sentry/core':
-        specifier: ^1.0.2
-        version: 1.0.2(react@19.2.6)(vue@3.5.31(typescript@5.8.3))
+        specifier: 1.0.4
+        version: 1.0.4(react@19.2.6)(vue@3.5.31(typescript@5.8.3))
       '@microsoft/fetch-event-source':
         specifier: ^2.0.1
         version: 2.0.1
@@ -942,6 +942,9 @@ packages:
     resolution: {integrity: sha512-nwc2iesjyc9hkuzcrMCBXQRn653XuAUKorfWM8PZyJawiy1QzLj4vahwzaI25+pfpwOLvMzbJ0uKpWLDNmo16w==}
     engines: {node: '>= 8'}
 
+  '@fingerprintjs/fingerprintjs@5.2.0':
+    resolution: {integrity: sha512-j+2nInkwCQNTJcNhOjvkGM/nLRTuGJTC6xai4quqvUpjob2ssrGwBZjS7k55nOmKvge7qvJT2nS3i/IRvQSTQA==}
+
   '@hono/node-server@1.19.11':
     resolution: {integrity: sha512-dr8/3zEaB+p0D2n/IUrlPF1HZm586qgJNXK1a9fhg/PzdtkK7Ksd5l312tJX2yBuALqDYBlG20QEbayqPyxn+g==}
     engines: {node: '>=18.14.1'}
@@ -1115,11 +1118,16 @@ packages:
   '@langchain/protocol@0.0.15':
     resolution: {integrity: sha512-MllvbpMjqHevUm+v94M422mH7XKN+wGCvJRBVROTWBotEDOATYB4Ktk2UheYP859y9o2LlhtPek5t1T9eyfAbQ==}
 
-  '@lark-sentry/core@1.0.2':
-    resolution: {integrity: sha512-UQ5U3wz7ThyaUe+Y/9M0bFdfPJ61g9IKBH8c9eGD2q8+MLCM5/FkqChtmXR2QfG6Ic/wz2aUSs9lvETbBddEkg==}
+  '@lark-sentry/core@1.0.4':
+    resolution: {integrity: sha512-pj9zurtniQOLqk51ZGSjP6WTROkwuOoiWJl9GAStXbqNgq+rA0KML03ZJIfGFp4g5YSlYGLgW2g40boahl5UoA==}
     peerDependencies:
       react: ^19.2.3
       vue: ^3.5.26
+    peerDependenciesMeta:
+      react:
+        optional: true
+      vue:
+        optional: true
 
   '@microsoft/fetch-event-source@2.0.1':
     resolution: {integrity: sha512-W6CLUJ2eBMw3Rec70qrsEW0jOm/3twwJv21mrmj2yORiaVmVYGS4sSS5yUwvQc1ZlDLYGPnClVWmUUMagKNsfA==}
@@ -1812,8 +1820,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rrweb/record@2.0.0-alpha.18':
-    resolution: {integrity: sha512-WbzcybTEqT+cKkOnzYiyaAYvNzAIxTK9f8qNLNOG9lOqWsmi+qu/W7CEdxHmfjlfgXGw/f7bxGZggAWVaizKqg==}
+  '@rrweb/record@2.0.0-alpha.20':
+    resolution: {integrity: sha512-marVOU3Lc285mwLCp+vI6M/eJ+wZ6lcTa7fX0zcdmBsM+j5loXmMQjkmIvkji5+lAbkq5/w2cwto3GS0TaCjtg==}
 
   '@rrweb/types@2.0.0-alpha.20':
     resolution: {integrity: sha512-RbnDgKxA/odwB1R4gF7eUUj+rdSrq6ROQJsnMw7MIsGzlbSYvJeZN8YY4XqU0G6sKJvXI6bSzk7w/G94jNwzhw==}
@@ -4996,6 +5004,9 @@ packages:
     peerDependencies:
       zod: ^3.25.28 || ^4
 
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
@@ -5502,6 +5513,8 @@ snapshots:
       '@fidm/asn1': 1.0.4
       tweetnacl: 1.0.3
 
+  '@fingerprintjs/fingerprintjs@5.2.0': {}
+
   '@hono/node-server@1.19.11(hono@4.12.19)':
     dependencies:
       hono: 4.12.19
@@ -5711,14 +5724,18 @@ snapshots:
 
   '@langchain/protocol@0.0.15': {}
 
-  '@lark-sentry/core@1.0.2(react@19.2.6)(vue@3.5.31(typescript@5.8.3))':
+  '@lark-sentry/core@1.0.4(react@19.2.6)(vue@3.5.31(typescript@5.8.3))':
     dependencies:
-      '@rrweb/record': 2.0.0-alpha.18
+      '@fingerprintjs/fingerprintjs': 5.2.0
+      '@rrweb/record': 2.0.0-alpha.20
       pako: 2.1.0
-      react: 19.2.6
+      tslib: 2.8.1
       ua-parser-js: 2.0.9
-      vue: 3.5.31(typescript@5.8.3)
       web-vitals: 5.2.0
+      zod: 3.25.76
+    optionalDependencies:
+      react: 19.2.6
+      vue: 3.5.31(typescript@5.8.3)
 
   '@microsoft/fetch-event-source@2.0.1': {}
 
@@ -6205,9 +6222,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.60.4':
     optional: true
 
-  '@rrweb/record@2.0.0-alpha.18':
+  '@rrweb/record@2.0.0-alpha.20':
     dependencies:
       '@rrweb/types': 2.0.0-alpha.20
+      '@rrweb/utils': 2.0.0-alpha.20
       rrweb: 2.0.0-alpha.20
 
   '@rrweb/types@2.0.0-alpha.20': {}
@@ -6725,7 +6743,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.6(@types/node@20.19.41)(@vitest/coverage-v8@4.1.6)(jsdom@29.1.1(@noble/hashes@1.8.0))(msw@2.14.6(@types/node@20.19.41)(typescript@5.9.3))(vite@8.0.13(@types/node@20.19.41)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.47.1)(tsx@4.22.1)(yaml@2.8.3))
+      vitest: 4.1.6(@types/node@24.12.4)(@vitest/coverage-v8@4.1.6)(jsdom@29.1.1(@noble/hashes@1.8.0))(msw@2.14.6(@types/node@24.12.4)(typescript@5.8.3))(vite@7.3.3(@types/node@24.12.4)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)(tsx@4.22.1)(yaml@2.8.3))
 
   '@vitest/expect@3.2.4':
     dependencies:
@@ -6807,11 +6825,13 @@ snapshots:
       entities: 7.0.1
       estree-walker: 2.0.2
       source-map-js: 1.2.1
+    optional: true
 
   '@vue/compiler-dom@3.5.31':
     dependencies:
       '@vue/compiler-core': 3.5.31
       '@vue/shared': 3.5.31
+    optional: true
 
   '@vue/compiler-sfc@3.5.31':
     dependencies:
@@ -6824,20 +6844,24 @@ snapshots:
       magic-string: 0.30.21
       postcss: 8.5.14
       source-map-js: 1.2.1
+    optional: true
 
   '@vue/compiler-ssr@3.5.31':
     dependencies:
       '@vue/compiler-dom': 3.5.31
       '@vue/shared': 3.5.31
+    optional: true
 
   '@vue/reactivity@3.5.31':
     dependencies:
       '@vue/shared': 3.5.31
+    optional: true
 
   '@vue/runtime-core@3.5.31':
     dependencies:
       '@vue/reactivity': 3.5.31
       '@vue/shared': 3.5.31
+    optional: true
 
   '@vue/runtime-dom@3.5.31':
     dependencies:
@@ -6845,12 +6869,14 @@ snapshots:
       '@vue/runtime-core': 3.5.31
       '@vue/shared': 3.5.31
       csstype: 3.2.3
+    optional: true
 
   '@vue/server-renderer@3.5.31(vue@3.5.31(typescript@5.8.3))':
     dependencies:
       '@vue/compiler-ssr': 3.5.31
       '@vue/shared': 3.5.31
       vue: 3.5.31(typescript@5.8.3)
+    optional: true
 
   '@vue/server-renderer@3.5.31(vue@3.5.31(typescript@5.9.3))':
     dependencies:
@@ -6859,7 +6885,8 @@ snapshots:
       vue: 3.5.31(typescript@5.9.3)
     optional: true
 
-  '@vue/shared@3.5.31': {}
+  '@vue/shared@3.5.31':
+    optional: true
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:
@@ -7396,7 +7423,8 @@ snapshots:
       graceful-fs: 4.2.11
       tapable: 2.3.3
 
-  entities@7.0.1: {}
+  entities@7.0.1:
+    optional: true
 
   entities@8.0.0: {}
 
@@ -9396,6 +9424,7 @@ snapshots:
       '@vue/shared': 3.5.31
     optionalDependencies:
       typescript: 5.8.3
+    optional: true
 
   vue@3.5.31(typescript@5.9.3):
     dependencies:
@@ -9557,6 +9586,8 @@ snapshots:
     dependencies:
       zod: 4.4.3
     optional: true
+
+  zod@3.25.76: {}
 
   zod@4.4.3: {}
 

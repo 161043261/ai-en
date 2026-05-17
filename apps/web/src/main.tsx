@@ -1,17 +1,26 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createAppRoot } from "./app/app-root";
 import "./index.css";
 import { parseProviderEnv } from "./shared/config";
-// import { init, larkEnable } from "@lark-sentry/core";
-// import PerformancePlugin from "@lark-sentry/core/plugins/perf";
-// import ScreenRecordPlugin from "@lark-sentry/core/plugins/record";
-// import ExposurePlugin from "@lark-sentry/core/plugins/exposure";
+import { ErrorState } from "./shared/ui";
 
-// init({ dsn: "/api/log" });
-// larkEnable(PerformancePlugin);
-// larkEnable(ScreenRecordPlugin);
-// larkEnable(ExposurePlugin);
+import { init, pluginEnable } from "@lark-sentry/core";
+import PerformancePlugin from "@lark-sentry/core/plugins/perf";
+import ScreenRecordPlugin from "@lark-sentry/core/plugins/record";
+import ExposurePlugin from "@lark-sentry/core/plugins/exposure";
+import {
+  ReactErrorBoundary,
+  type ReactErrorBoundaryProps,
+} from "@lark-sentry/core/react";
+
+init({ dsn: "/sentry", visitorId: "" });
+pluginEnable(PerformancePlugin);
+pluginEnable(ScreenRecordPlugin);
+pluginEnable(ExposurePlugin);
+
+const boundaryProps: ReactErrorBoundaryProps = {
+  fallback: <ErrorState />,
+};
 
 const AppRoot = createAppRoot(parseProviderEnv(import.meta.env));
 
@@ -32,8 +41,8 @@ async function enableMocking(): Promise<void> {
 
 void enableMocking().then(() => {
   createRoot(rootElement).render(
-    <StrictMode>
+    <ReactErrorBoundary {...boundaryProps}>
       <AppRoot />
-    </StrictMode>,
+    </ReactErrorBoundary>,
   );
 });
