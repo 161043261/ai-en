@@ -16,9 +16,13 @@ export function createWordBookEndpoints(client: ApiClient): WordBookEndpoints {
   return {
     getWordBookList: async (params) => {
       const query = WordQuerySchema.parse(params);
-      const response = await client.get("/word-book", createResponseSchema(WordListSchema), {
-        params: createQueryParams(query),
-      });
+      const response = await client.get(
+        "/word-book",
+        createResponseSchema(WordListSchema),
+        {
+          params: createQueryParams(query),
+        },
+      );
       return response.data;
     },
   };

@@ -12,7 +12,7 @@ type Story = StoryObj;
 
 export const Login: Story = {
   render: () => (
-    <div className="card max-w-md bg-base-100 shadow-xl">
+    <div className="card bg-base-100 max-w-md shadow-xl">
       <div className="card-body">
         <StorybookServices>
           <LoginForm close={() => undefined} setMode={() => undefined} />

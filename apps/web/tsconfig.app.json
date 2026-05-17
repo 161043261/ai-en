@@ -29,5 +29,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [".storybook", "src"]
+  "include": [".storybook", "src", "vite-plugin-sentry.ts"]
 }

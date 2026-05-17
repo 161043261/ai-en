@@ -36,11 +36,19 @@ export function ChatComposer({
     <form className="card bg-base-100 shadow-xl" onSubmit={submit}>
       <div className="card-body gap-4">
         <div className="flex flex-wrap gap-2">
-          <button className="btn btn-sm" onClick={() => setDeepThink((value) => !value)} type="button">
+          <button
+            className="btn btn-sm"
+            onClick={() => setDeepThink((value) => !value)}
+            type="button"
+          >
             <Brain aria-hidden="true" size={16} />
             {deepThink ? "Deep think on" : "Deep think"}
           </button>
-          <button className="btn btn-sm" onClick={() => setWebSearch((value) => !value)} type="button">
+          <button
+            className="btn btn-sm"
+            onClick={() => setWebSearch((value) => !value)}
+            type="button"
+          >
             <Search aria-hidden="true" size={16} />
             {webSearch ? "Web search on" : "Web search"}
           </button>
@@ -72,7 +80,11 @@ export function ChatComposer({
           value={content}
         />
         <div className="card-actions justify-end">
-          <button className="btn btn-primary" disabled={isDisabled || isStreaming} type="submit">
+          <button
+            className="btn btn-primary"
+            disabled={isDisabled || isStreaming}
+            type="submit"
+          >
             <Send aria-hidden="true" size={18} />
             {isStreaming ? "Streaming..." : "Send"}
           </button>

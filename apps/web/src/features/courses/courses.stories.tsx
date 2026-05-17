@@ -3,7 +3,8 @@ import type { Course } from "../../shared/api/course-schema";
 import { CourseCard } from "./course-card";
 
 const course: Course = {
-  description: "Build travel and daily conversation vocabulary with AI guidance.",
+  description:
+    "Build travel and daily conversation vocabulary with AI guidance.",
   id: "course-1",
   name: "Starter Vocabulary",
   price: "19.9",

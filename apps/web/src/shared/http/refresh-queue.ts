@@ -4,7 +4,9 @@ export type RefreshQueue = {
   readonly refresh: () => Promise<string>;
 };
 
-export function createRefreshQueue(refreshAccessToken: RefreshAccessToken): RefreshQueue {
+export function createRefreshQueue(
+  refreshAccessToken: RefreshAccessToken,
+): RefreshQueue {
   let activeRefresh: Promise<string> | null = null;
 
   return {

@@ -18,7 +18,8 @@ export function useCourseCatalog() {
   const loadCourses = () => {
     setIsLoading(true);
     setError(null);
-    const request = tab === "owned" ? api.course.getMyCourse : api.course.getCourseList;
+    const request =
+      tab === "owned" ? api.course.getMyCourse : api.course.getCourseList;
     void request()
       .then(setCourses)
       .catch(() => setError("Unable to load courses."))

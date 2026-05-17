@@ -8,7 +8,7 @@ export function UserAvatar({ avatarUrl, name }: UserAvatarProps) {
 
   return (
     <div className="avatar avatar-placeholder">
-      <div className="w-10 rounded-full bg-primary text-primary-content">
+      <div className="bg-primary text-primary-content w-10 rounded-full">
         {avatarUrl ? <img alt="" src={avatarUrl} /> : <span>{fallback}</span>}
       </div>
     </div>

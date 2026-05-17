@@ -1,9 +1,5 @@
 import { describe, expect, test } from "vitest";
-import {
-  createSpellingCells,
-  isSpellingComplete,
-  updateSpellingCell,
-} from ".";
+import { createSpellingCells, isSpellingComplete, updateSpellingCell } from ".";
 
 describe("spelling state", () => {
   test("tracks correct and incorrect letter input", () => {

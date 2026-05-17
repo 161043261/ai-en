@@ -1,7 +1,4 @@
-import {
-  CourseLearning,
-  type LearnRouteParams,
-} from "../../features/learning";
+import { CourseLearning, type LearnRouteParams } from "../../features/learning";
 
 export type CourseLearnPageProps = {
   readonly params: LearnRouteParams | null;

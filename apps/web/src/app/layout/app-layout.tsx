@@ -8,7 +8,7 @@ export type AppLayoutProps = {
 
 export function AppLayout({ activePath, children }: AppLayoutProps) {
   return (
-    <div className="min-h-dvh bg-base-100 text-base-content">
+    <div className="bg-base-100 text-base-content min-h-dvh">
       <AppHeader activePath={activePath} />
       <main aria-label="AI EN" className="mx-auto max-w-7xl px-4 py-8">
         {children}

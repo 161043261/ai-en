@@ -10,7 +10,7 @@ export function MarkdownMessage({ content }: MarkdownMessageProps) {
 
   return (
     <div
-      className="prose prose-sm max-w-none text-base-content"
+      className="prose prose-sm text-base-content max-w-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

@@ -1,4 +1,7 @@
-import type { ChatMessage, ChatMessageList } from "../../shared/api/chat-schema";
+import type {
+  ChatMessage,
+  ChatMessageList,
+} from "../../shared/api/chat-schema";
 
 export function createHumanMessage(content: string): ChatMessage {
   return { content, role: "human", type: "chat" };

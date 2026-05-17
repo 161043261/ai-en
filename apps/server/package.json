@@ -33,7 +33,7 @@
     "@prisma/client": "^7.8.0",
     "@types/node-cron": "^3.0.11",
     "alipay-sdk": "^4.14.0",
-    "bullmq": "^5.76.9",
+    "bullmq": "^5.76.10",
     "dayjs": "^1.11.20",
     "dotenv": "^17.4.2",
     "hono": "^4.12.19",

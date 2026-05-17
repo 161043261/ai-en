@@ -10,7 +10,7 @@ export function ChatMessageList({ messages }: ChatMessageListProps) {
   if (messages.length === 0) return <EmptyState />;
 
   return (
-    <div className="flex min-h-[34rem] flex-col gap-5 overflow-y-auto rounded-box bg-base-200 p-5">
+    <div className="rounded-box bg-base-200 flex min-h-[34rem] flex-col gap-5 overflow-y-auto p-5">
       {messages.map((message, index) => {
         const key = `${message.role}-${index}`;
         if (message.role === "human") {
@@ -27,7 +27,7 @@ export function ChatMessageList({ messages }: ChatMessageListProps) {
           <div className="chat chat-start" key={key}>
             <div className="chat-header">AI EN</div>
             {message.reasoning ? (
-              <div className="chat-bubble mb-2 bg-base-300 text-xs text-base-content/70">
+              <div className="chat-bubble bg-base-300 text-base-content/70 mb-2 text-xs">
                 {message.reasoning}
               </div>
             ) : null}

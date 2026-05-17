@@ -27,5 +27,7 @@ export function StorybookServices({ children }: StorybookServicesProps) {
     [],
   );
 
-  return <AppServicesProvider services={services}>{children}</AppServicesProvider>;
+  return (
+    <AppServicesProvider services={services}>{children}</AppServicesProvider>
+  );
 }

@@ -13,9 +13,11 @@ export function CourseCatalog() {
   return (
     <div className="flex flex-col gap-8">
       <header className="text-center">
-        <div className="badge badge-primary badge-soft mb-3">Vocabulary Courses</div>
+        <div className="badge badge-primary badge-soft mb-3">
+          Vocabulary Courses
+        </div>
         <h1 className="text-4xl font-black">Curated vocabulary tracks</h1>
-        <p className="mx-auto mt-3 max-w-2xl text-base-content/65">
+        <p className="text-base-content/65 mx-auto mt-3 max-w-2xl">
           Purchase once, keep access, and practice with focused word batches.
         </p>
       </header>

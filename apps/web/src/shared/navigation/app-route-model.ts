@@ -1,11 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  BookOpen,
-  Bot,
-  GraduationCap,
-  Home,
-  Settings,
-} from "lucide-react";
+import { BookOpen, Bot, GraduationCap, Home, Settings } from "lucide-react";
 
 export type AppRoutePath =
   | "/"

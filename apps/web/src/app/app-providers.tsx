@@ -1,6 +1,9 @@
 import type { AppConfig } from "../shared/config";
 import { createDataProvider } from "../shared/data";
-import type { AppProvider, ProviderProps } from "../shared/providers/provider.types";
+import type {
+  AppProvider,
+  ProviderProps,
+} from "../shared/providers/provider.types";
 import { createStateProvider } from "../shared/state";
 
 export function createAppProviders(config: AppConfig): AppProvider {

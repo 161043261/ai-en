@@ -37,7 +37,7 @@ export function LoginForm({ close, setMode }: AuthFormProps) {
     <form className="flex flex-col gap-4" onSubmit={submit}>
       <div>
         <h2 className="text-3xl font-black">Welcome back</h2>
-        <p className="text-sm text-base-content/60">
+        <p className="text-base-content/60 text-sm">
           Sign in to continue your English practice.
         </p>
       </div>

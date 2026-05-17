@@ -25,8 +25,15 @@ type Story = StoryObj;
 export const PracticeStep: Story = {
   render: () => (
     <div className="flex max-w-3xl flex-col gap-6">
-      <WordDetailCard isHidden={false} toggleHidden={() => undefined} word={word} />
-      <SpellingGrid cells={createSpellingCells("ai")} updateCell={() => undefined} />
+      <WordDetailCard
+        isHidden={false}
+        toggleHidden={() => undefined}
+        word={word}
+      />
+      <SpellingGrid
+        cells={createSpellingCells("ai")}
+        updateCell={() => undefined}
+      />
     </div>
   ),
 };

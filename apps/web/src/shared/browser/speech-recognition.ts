@@ -40,7 +40,9 @@ function getSpeechRecognitionConstructor() {
 }
 
 export function hasSpeechRecognition() {
-  return typeof window !== "undefined" && Boolean(getSpeechRecognitionConstructor());
+  return (
+    typeof window !== "undefined" && Boolean(getSpeechRecognitionConstructor())
+  );
 }
 
 export function useSpeechToText(options: SpeechRecognitionOptions) {

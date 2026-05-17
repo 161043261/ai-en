@@ -6,7 +6,10 @@ export type SpeakOptions = {
 };
 
 export function speakText(text: string, options: SpeakOptions = {}): void {
-  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+  if (
+    !("speechSynthesis" in window) ||
+    !("SpeechSynthesisUtterance" in window)
+  ) {
     return;
   }
   const utterance = new SpeechSynthesisUtterance(text);

@@ -37,10 +37,12 @@ export function createRequestExecutor(
       );
 
       if (response.status === 401 && options.refreshQueue && !hasRetriedAuth) {
-        const nextToken = await options.refreshQueue.refresh().catch((error: unknown) => {
-          options.clientOptions.onAuthExpired?.();
-          throw error;
-        });
+        const nextToken = await options.refreshQueue
+          .refresh()
+          .catch((error: unknown) => {
+            options.clientOptions.onAuthExpired?.();
+            throw error;
+          });
 
         return run(method, path, schema, requestOptions, nextToken, true);
       }

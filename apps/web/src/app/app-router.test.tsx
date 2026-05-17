@@ -106,7 +106,9 @@ describe("application routes", () => {
       render(<AppRoot />);
 
       expect(
-        await screen.findByText("Unable to load this area. Please try again later."),
+        await screen.findByText(
+          "Unable to load this area. Please try again later.",
+        ),
       ).toBeInTheDocument();
       expect(learningRequests).toBe(0);
     },

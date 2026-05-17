@@ -66,8 +66,8 @@ importers:
         specifier: ^4.14.0
         version: 4.14.0
       bullmq:
-        specifier: ^5.76.9
-        version: 5.76.9
+        specifier: ^5.76.10
+        version: 5.76.10
       dayjs:
         specifier: ^1.11.20
         version: 1.11.20
@@ -286,6 +286,9 @@ importers:
       msw:
         specifier: ^2.14.6
         version: 2.14.6(@types/node@24.12.4)(typescript@5.8.3)
+      pino:
+        specifier: ^10.3.1
+        version: 10.3.1
       prettier:
         specifier: ^3.8.3
         version: 3.8.3
@@ -2492,8 +2495,8 @@ packages:
     resolution: {integrity: sha512-02yxLeyxF4dNl6SlY6/5HfRSrSdZ/sCPoxy2kZNP5dZZX8LSAD9aE2gtJIUgWrsQTiMPl3mxESyrobSwvRGisQ==}
     engines: {node: '>=18.20'}
 
-  bullmq@5.76.9:
-    resolution: {integrity: sha512-hJ7eq01XMcaN+jGZFq4ejIjyFdJo9fG+y/biI4DAY9Ltw/cv1/OSYBW0RSnNu2m8dMR5noc4+LotxcQp8+MVDA==}
+  bullmq@5.76.10:
+    resolution: {integrity: sha512-LWve7SpQjYSpCP2GEsWmoyzTz2H37L8HRmSTu3YihYsTOr5kJxrfEX6aEV7m6eskEMWXSHZYTMZepX6qNaH6CQ==}
     engines: {node: '>=12.22.0'}
 
   bundle-name@4.1.0:
@@ -7109,7 +7112,7 @@ snapshots:
 
   builtin-modules@5.2.0: {}
 
-  bullmq@5.76.9:
+  bullmq@5.76.10:
     dependencies:
       cron-parser: 4.9.0
       ioredis: 5.10.1

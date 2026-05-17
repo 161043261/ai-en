@@ -1,4 +1,10 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
 import { AppServicesProvider } from "../../app/app-services-context";
 import { createAppServices } from "../../app/app-services";
@@ -120,13 +126,17 @@ describe("useLearningSession", () => {
       </AppServicesProvider>,
     );
 
-    expect(await screen.findByRole("heading", { name: "ai" })).toBeInTheDocument();
+    expect(
+      await screen.findByRole("heading", { name: "ai" }),
+    ).toBeInTheDocument();
     const firstLetter = await screen.findByLabelText("Letter 1");
     const secondLetter = await screen.findByLabelText("Letter 2");
     fireEvent.change(firstLetter, { target: { value: "a" } });
     fireEvent.change(secondLetter, { target: { value: "i" } });
     fireEvent.click(screen.getByRole("button", { name: "Next" }));
-    fireEvent.click(screen.getByRole("button", { name: "Save mastered words" }));
+    fireEvent.click(
+      screen.getByRole("button", { name: "Save mastered words" }),
+    );
 
     await waitFor(() => {
       expect(services.session.getState().user?.wordNumber).toBe(4);

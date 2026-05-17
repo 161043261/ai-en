@@ -10,11 +10,17 @@ export type CourseEndpoints = {
 export function createCourseEndpoints(client: ApiClient): CourseEndpoints {
   return {
     getCourseList: async () => {
-      const response = await client.get("/course/list", createResponseSchema(CourseListSchema));
+      const response = await client.get(
+        "/course/list",
+        createResponseSchema(CourseListSchema),
+      );
       return response.data;
     },
     getMyCourse: async () => {
-      const response = await client.get("/course/my", createResponseSchema(CourseListSchema));
+      const response = await client.get(
+        "/course/my",
+        createResponseSchema(CourseListSchema),
+      );
       return response.data;
     },
   };

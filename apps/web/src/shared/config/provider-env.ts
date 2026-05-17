@@ -3,7 +3,9 @@ import { z } from "zod";
 const ProviderEnvSchema = z
   .object({
     AI_API_BASE_URL: z.string().min(1).default("/ai/v1"),
-    ROUTER_PROVIDER: z.enum(["react-router", "tanstack"]).default("react-router"),
+    ROUTER_PROVIDER: z
+      .enum(["react-router", "tanstack"])
+      .default("react-router"),
     SERVER_API_BASE_URL: z.string().min(1).default("/api/v1"),
     STORE_PROVIDER: z.enum(["zustand", "jotai"]).default("zustand"),
     SWR_PROVIDER: z.enum(["swr", "tanstack"]).default("swr"),

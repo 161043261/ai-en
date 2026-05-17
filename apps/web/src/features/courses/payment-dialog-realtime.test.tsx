@@ -1,4 +1,10 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
 import { AppServicesProvider } from "../../app/app-services-context";
 import type { RealtimeSocket } from "../../shared/realtime";
@@ -33,7 +39,8 @@ describe("PaymentDialog realtime confirmation", () => {
     const socket: RealtimeSocket = {
       disconnect: vi.fn(),
       off: (event, listener) => {
-        if (!listener || listeners.get(event) === listener) listeners.delete(event);
+        if (!listener || listeners.get(event) === listener)
+          listeners.delete(event);
       },
       on: (event, listener) => {
         listeners.set(event, listener);
@@ -113,7 +120,9 @@ describe("PaymentDialog realtime confirmation", () => {
 
   test("expires payment orders when polling passes the deadline", async () => {
     const fetchMock: typeof fetch = async () =>
-      paymentSuccessResponse(createPaymentResult({ timeExpire: Date.now() - 1 }));
+      paymentSuccessResponse(
+        createPaymentResult({ timeExpire: Date.now() - 1 }),
+      );
     vi.stubGlobal("fetch", fetchMock);
     const services = createPaymentServices();
 

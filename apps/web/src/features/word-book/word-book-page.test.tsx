@@ -1,4 +1,10 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
 import { createAppServices } from "../../app/app-services";
 import { AppServicesProvider } from "../../app/app-services-context";
@@ -52,7 +58,10 @@ describe("WordBook", () => {
       return successResponse({ list: [word], total: 1 });
     };
     vi.stubGlobal("fetch", fetchMock);
-    const services = createAppServices({ config: testConfig, navigateHome: vi.fn() });
+    const services = createAppServices({
+      config: testConfig,
+      navigateHome: vi.fn(),
+    });
 
     render(
       <AppServicesProvider services={services}>
@@ -60,7 +69,9 @@ describe("WordBook", () => {
       </AppServicesProvider>,
     );
 
-    expect(await screen.findByRole("heading", { name: "ai" })).toBeInTheDocument();
+    expect(
+      await screen.findByRole("heading", { name: "ai" }),
+    ).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "GRE" }));
 

@@ -1,7 +1,10 @@
 import type { ApiClients } from "./api-clients";
 import { createAuthEndpoints, type AuthEndpoints } from "./auth-endpoints";
 import { createChatEndpoints, type ChatEndpoints } from "./chat-endpoints";
-import { createCourseEndpoints, type CourseEndpoints } from "./course-endpoints";
+import {
+  createCourseEndpoints,
+  type CourseEndpoints,
+} from "./course-endpoints";
 import { createLearnEndpoints, type LearnEndpoints } from "./learn-endpoints";
 import { createPayEndpoints, type PayEndpoints } from "./pay-endpoints";
 import { createUserEndpoints, type UserEndpoints } from "./user-endpoints";
