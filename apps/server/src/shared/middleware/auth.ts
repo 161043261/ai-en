@@ -1,8 +1,7 @@
 import { createMiddleware } from "hono/factory";
+import type { HonoContext } from "../../types/index.js";
 import { verifyAccessToken } from "../utils/auth.js";
 import { error } from "../utils/response.js";
-
-import type { HonoContext } from "../../types/index.js";
 
 export const authMiddleware = createMiddleware<HonoContext>(async (c, next) => {
   const authHeader = c.req.header("Authorization");

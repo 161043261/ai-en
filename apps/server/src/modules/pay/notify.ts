@@ -1,9 +1,9 @@
+import type { AlipayClient } from "./alipay-adapter.js";
 import {
   notifyBizBodySchema,
   paymentNotifyFormSchema,
   paymentNotifyStringRecordSchema,
 } from "./schema.js";
-import type { AlipayClient } from "./alipay-adapter.js";
 import type { NotifyPaymentInput } from "./service.js";
 
 export const parsePaymentNotifyForm = (formData: unknown) => {

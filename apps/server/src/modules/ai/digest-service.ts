@@ -4,9 +4,9 @@ import type { Prisma, PrismaClient } from "../../generated/prisma/client.js";
 import type { EmailTransport } from "../../shared/email/sender.js";
 import { sendEmail } from "../../shared/email/sender.js";
 import {
+  type DigestJobData,
   digestJobOptions,
   digestTaskName,
-  type DigestJobData,
   type EmailDigestJobData,
 } from "./digest-queue.js";
 

@@ -17,10 +17,12 @@ describe("auth tokens", () => {
       userId: "user-1",
       tokenType: "access",
     });
-    await expect(verifyRefreshToken(token.refreshToken)).resolves.toMatchObject({
-      userId: "user-1",
-      tokenType: "refresh",
-    });
+    await expect(verifyRefreshToken(token.refreshToken)).resolves.toMatchObject(
+      {
+        userId: "user-1",
+        tokenType: "refresh",
+      },
+    );
     await expect(verifyRefreshToken(token.accessToken)).rejects.toThrow(
       "Expected refresh token",
     );

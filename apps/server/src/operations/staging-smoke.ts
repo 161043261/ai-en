@@ -5,8 +5,8 @@ import {
   type StagingAiProvider,
 } from "./staging-env-keys.js";
 import {
-  manualChecks,
   type ManualSmokeCheck,
+  manualChecks,
 } from "./staging-manual-checks.js";
 
 const booleanStagingEnvSchema = z

@@ -87,8 +87,8 @@ export type CourseRecordCountAggregateInputType = {
 };
 
 export type CourseRecordAggregateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which CourseRecord to aggregate.
@@ -150,8 +150,8 @@ export type GetCourseRecordAggregateType<T extends CourseRecordAggregateArgs> =
   };
 
 export type CourseRecordGroupByArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.CourseRecordWhereInput;
   orderBy?:
@@ -1064,8 +1064,8 @@ export type CourseRecordUncheckedUpdateManyWithoutCourseInput = {
 };
 
 export type CourseRecordSelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1083,8 +1083,8 @@ export type CourseRecordSelect<
 >;
 
 export type CourseRecordSelectCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1102,8 +1102,8 @@ export type CourseRecordSelectCreateManyAndReturn<
 >;
 
 export type CourseRecordSelectUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1131,8 +1131,8 @@ export type CourseRecordSelectScalar = {
 };
 
 export type CourseRecordOmit<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetOmit<
   | "id"
   | "userId"
@@ -1144,24 +1144,24 @@ export type CourseRecordOmit<
   ExtArgs["result"]["courseRecord"]
 >;
 export type CourseRecordInclude<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   paymentRecord?: boolean | Prisma.CourseRecord$paymentRecordArgs<ExtArgs>;
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
   course?: boolean | Prisma.CourseDefaultArgs<ExtArgs>;
 };
 export type CourseRecordIncludeCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   paymentRecord?: boolean | Prisma.CourseRecord$paymentRecordArgs<ExtArgs>;
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
   course?: boolean | Prisma.CourseDefaultArgs<ExtArgs>;
 };
 export type CourseRecordIncludeUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   paymentRecord?: boolean | Prisma.CourseRecord$paymentRecordArgs<ExtArgs>;
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
@@ -1169,8 +1169,8 @@ export type CourseRecordIncludeUpdateManyAndReturn<
 };
 
 export type $CourseRecordPayload<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   name: "CourseRecord";
   objects: {
@@ -1198,8 +1198,8 @@ export type CourseRecordGetPayload<
 > = runtime.Types.Result.GetResult<Prisma.$CourseRecordPayload, S>;
 
 export type CourseRecordCountArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = Omit<
   CourseRecordFindManyArgs,
   "select" | "include" | "distinct" | "omit"
@@ -1208,8 +1208,8 @@ export type CourseRecordCountArgs<
 };
 
 export interface CourseRecordDelegate<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > {
   [K: symbol]: {
@@ -1738,8 +1738,8 @@ export interface CourseRecordDelegate<
 export interface Prisma__CourseRecordClient<
   T,
   Null = never,
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise";
@@ -1840,8 +1840,8 @@ export interface CourseRecordFieldRefs {
  * CourseRecord findUnique
  */
 export type CourseRecordFindUniqueArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -1865,8 +1865,8 @@ export type CourseRecordFindUniqueArgs<
  * CourseRecord findUniqueOrThrow
  */
 export type CourseRecordFindUniqueOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -1890,8 +1890,8 @@ export type CourseRecordFindUniqueOrThrowArgs<
  * CourseRecord findFirst
  */
 export type CourseRecordFindFirstArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -1949,8 +1949,8 @@ export type CourseRecordFindFirstArgs<
  * CourseRecord findFirstOrThrow
  */
 export type CourseRecordFindFirstOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2008,8 +2008,8 @@ export type CourseRecordFindFirstOrThrowArgs<
  * CourseRecord findMany
  */
 export type CourseRecordFindManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2067,8 +2067,8 @@ export type CourseRecordFindManyArgs<
  * CourseRecord create
  */
 export type CourseRecordCreateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2095,8 +2095,8 @@ export type CourseRecordCreateArgs<
  * CourseRecord createMany
  */
 export type CourseRecordCreateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to create many CourseRecords.
@@ -2111,8 +2111,8 @@ export type CourseRecordCreateManyArgs<
  * CourseRecord createManyAndReturn
  */
 export type CourseRecordCreateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2139,8 +2139,8 @@ export type CourseRecordCreateManyAndReturnArgs<
  * CourseRecord update
  */
 export type CourseRecordUpdateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2171,8 +2171,8 @@ export type CourseRecordUpdateArgs<
  * CourseRecord updateMany
  */
 export type CourseRecordUpdateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to update CourseRecords.
@@ -2195,8 +2195,8 @@ export type CourseRecordUpdateManyArgs<
  * CourseRecord updateManyAndReturn
  */
 export type CourseRecordUpdateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2231,8 +2231,8 @@ export type CourseRecordUpdateManyAndReturnArgs<
  * CourseRecord upsert
  */
 export type CourseRecordUpsertArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2270,8 +2270,8 @@ export type CourseRecordUpsertArgs<
  * CourseRecord delete
  */
 export type CourseRecordDeleteArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2295,8 +2295,8 @@ export type CourseRecordDeleteArgs<
  * CourseRecord deleteMany
  */
 export type CourseRecordDeleteManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which CourseRecords to delete
@@ -2312,8 +2312,8 @@ export type CourseRecordDeleteManyArgs<
  * CourseRecord.paymentRecord
  */
 export type CourseRecord$paymentRecordArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2334,8 +2334,8 @@ export type CourseRecord$paymentRecordArgs<
  * CourseRecord without action
  */
 export type CourseRecordDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord

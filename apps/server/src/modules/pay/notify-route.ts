@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import type { HonoContext } from "../../types/index.js";
 import type { AlipayClient } from "./alipay-adapter.js";
 import {
   isPaymentNotifyTrusted,
@@ -9,7 +10,6 @@ import {
   parseVerifiedAlipayNotifyInput,
 } from "./notify.js";
 import type { NotifyPaymentInput } from "./service.js";
-import type { HonoContext } from "../../types/index.js";
 
 export type CompletePaymentHandler = (
   input: NotifyPaymentInput,

@@ -133,8 +133,8 @@ export type PerformanceEntryCountAggregateInputType = {
 };
 
 export type PerformanceEntryAggregateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which PerformanceEntry to aggregate.
@@ -209,8 +209,8 @@ export type GetPerformanceEntryAggregateType<
 };
 
 export type PerformanceEntryGroupByArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.PerformanceEntryWhereInput;
   orderBy?:
@@ -768,8 +768,8 @@ export type PerformanceEntryUncheckedUpdateManyWithoutVisitorInput = {
 };
 
 export type PerformanceEntrySelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -787,8 +787,8 @@ export type PerformanceEntrySelect<
 >;
 
 export type PerformanceEntrySelectCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -806,8 +806,8 @@ export type PerformanceEntrySelectCreateManyAndReturn<
 >;
 
 export type PerformanceEntrySelectUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -837,8 +837,8 @@ export type PerformanceEntrySelectScalar = {
 };
 
 export type PerformanceEntryOmit<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetOmit<
   | "id"
   | "visitorId"
@@ -852,27 +852,27 @@ export type PerformanceEntryOmit<
   ExtArgs["result"]["performanceEntry"]
 >;
 export type PerformanceEntryInclude<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 export type PerformanceEntryIncludeCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 export type PerformanceEntryIncludeUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 
 export type $PerformanceEntryPayload<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   name: "PerformanceEntry";
   objects: {
@@ -900,8 +900,8 @@ export type PerformanceEntryGetPayload<
 > = runtime.Types.Result.GetResult<Prisma.$PerformanceEntryPayload, S>;
 
 export type PerformanceEntryCountArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = Omit<
   PerformanceEntryFindManyArgs,
   "select" | "include" | "distinct" | "omit"
@@ -910,8 +910,8 @@ export type PerformanceEntryCountArgs<
 };
 
 export interface PerformanceEntryDelegate<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > {
   [K: symbol]: {
@@ -1456,8 +1456,8 @@ export interface PerformanceEntryDelegate<
 export interface Prisma__PerformanceEntryClient<
   T,
   Null = never,
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise";
@@ -1533,8 +1533,8 @@ export interface PerformanceEntryFieldRefs {
  * PerformanceEntry findUnique
  */
 export type PerformanceEntryFindUniqueArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1558,8 +1558,8 @@ export type PerformanceEntryFindUniqueArgs<
  * PerformanceEntry findUniqueOrThrow
  */
 export type PerformanceEntryFindUniqueOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1583,8 +1583,8 @@ export type PerformanceEntryFindUniqueOrThrowArgs<
  * PerformanceEntry findFirst
  */
 export type PerformanceEntryFindFirstArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1642,8 +1642,8 @@ export type PerformanceEntryFindFirstArgs<
  * PerformanceEntry findFirstOrThrow
  */
 export type PerformanceEntryFindFirstOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1701,8 +1701,8 @@ export type PerformanceEntryFindFirstOrThrowArgs<
  * PerformanceEntry findMany
  */
 export type PerformanceEntryFindManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1760,8 +1760,8 @@ export type PerformanceEntryFindManyArgs<
  * PerformanceEntry create
  */
 export type PerformanceEntryCreateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1788,8 +1788,8 @@ export type PerformanceEntryCreateArgs<
  * PerformanceEntry createMany
  */
 export type PerformanceEntryCreateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to create many PerformanceEntries.
@@ -1804,8 +1804,8 @@ export type PerformanceEntryCreateManyArgs<
  * PerformanceEntry createManyAndReturn
  */
 export type PerformanceEntryCreateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1832,8 +1832,8 @@ export type PerformanceEntryCreateManyAndReturnArgs<
  * PerformanceEntry update
  */
 export type PerformanceEntryUpdateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1864,8 +1864,8 @@ export type PerformanceEntryUpdateArgs<
  * PerformanceEntry updateMany
  */
 export type PerformanceEntryUpdateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to update PerformanceEntries.
@@ -1888,8 +1888,8 @@ export type PerformanceEntryUpdateManyArgs<
  * PerformanceEntry updateManyAndReturn
  */
 export type PerformanceEntryUpdateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1924,8 +1924,8 @@ export type PerformanceEntryUpdateManyAndReturnArgs<
  * PerformanceEntry upsert
  */
 export type PerformanceEntryUpsertArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1963,8 +1963,8 @@ export type PerformanceEntryUpsertArgs<
  * PerformanceEntry delete
  */
 export type PerformanceEntryDeleteArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -1988,8 +1988,8 @@ export type PerformanceEntryDeleteArgs<
  * PerformanceEntry deleteMany
  */
 export type PerformanceEntryDeleteManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which PerformanceEntries to delete
@@ -2005,8 +2005,8 @@ export type PerformanceEntryDeleteManyArgs<
  * PerformanceEntry without action
  */
 export type PerformanceEntryDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry

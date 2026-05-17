@@ -1,5 +1,4 @@
 import { describe, expect, test } from "vitest";
-import { chatRoleSchema } from "./schema.js";
 import {
   chatMode,
   chatPromptContract,
@@ -7,6 +6,7 @@ import {
   listPromptMetadata,
   listPromptReviewItems,
 } from "./prompts.js";
+import { chatRoleSchema } from "./schema.js";
 
 describe("AI prompts", () => {
   test("returns stable public prompt metadata", () => {

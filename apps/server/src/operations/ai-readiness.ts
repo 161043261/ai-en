@@ -1,4 +1,4 @@
-import { env, type Env } from "../shared/config/env.js";
+import { type Env, env } from "../shared/config/env.js";
 import { checkOllamaModels } from "./ollama-readiness.js";
 import {
   createDependencyStatus,

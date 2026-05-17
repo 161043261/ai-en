@@ -13,9 +13,7 @@ const createConfig = (fetchImpl: typeof fetch) => ({
 
 describe("Ollama readiness", () => {
   test("deduplicates required model names", () => {
-    expect(listRequiredOllamaModels("qwen3.5", "qwen3.5")).toEqual([
-      "qwen3.5",
-    ]);
+    expect(listRequiredOllamaModels("qwen3.5", "qwen3.5")).toEqual(["qwen3.5"]);
   });
 
   test("accepts installed models with explicit tags", async () => {

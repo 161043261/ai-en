@@ -1,7 +1,7 @@
 import type { PrismaClient } from "../generated/prisma/client.js";
-import { minioClient, getBucket } from "../shared/utils/minio.js";
-import { createRedisConnection } from "../shared/redis/connection.js";
 import { prisma } from "../shared/prisma/index.js";
+import { createRedisConnection } from "../shared/redis/connection.js";
+import { getBucket, minioClient } from "../shared/utils/minio.js";
 import { createAiConfigCheck } from "./ai-readiness.js";
 import { createPaymentConfigCheck } from "./payment-readiness.js";
 import {
@@ -62,9 +62,9 @@ export const createReadinessReport = async (
   };
 };
 
+export type { ReadinessCheck, ReadinessReport };
 export {
   createAiConfigCheck,
   createDependencyStatus,
   createPaymentConfigCheck,
 };
-export type { ReadinessCheck, ReadinessReport };

@@ -1,7 +1,7 @@
 import { describe, expect, test, vi } from "vitest";
 import {
-  courseSeedValues,
   courseSeeds,
+  courseSeedValues,
   toCourseSeedData,
 } from "./course-seed-data.js";
 import { seedCourses } from "./course-seed-service.js";

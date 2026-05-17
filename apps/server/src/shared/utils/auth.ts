@@ -1,8 +1,8 @@
 import { randomUUID } from "node:crypto";
 import { sign, verify } from "hono/jwt";
 import {
-  signedTokenPayloadSchema,
   type SignedTokenPayload,
+  signedTokenPayloadSchema,
   type TokenPair,
   type TokenPayload,
 } from "../auth/token.js";

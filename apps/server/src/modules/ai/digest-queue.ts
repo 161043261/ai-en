@@ -1,4 +1,4 @@
-import { Queue, Worker, type JobsOptions } from "bullmq";
+import { type JobsOptions, Queue, Worker } from "bullmq";
 import type { Redis } from "ioredis";
 import { createRedisConnection } from "../../shared/redis/connection.js";
 

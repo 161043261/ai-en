@@ -12,34 +12,43 @@ import { selectUser } from "./select-user.js";
 export const createUserAuthRouter = () => {
   const router = new Hono<HonoContext>();
 
-  router.post("/login", zValidator("json", loginSchema), withPrisma, async (c) => {
-    const { phone, password } = c.req.valid("json");
-    const prisma = c.get("prisma");
-    const user = await prisma.user.findUnique({ where: { phone } });
-    if (!user) return c.json(error(null, "user not found", 404));
+  router.post(
+    "/login",
+    zValidator("json", loginSchema),
+    withPrisma,
+    async (c) => {
+      const { phone, password } = c.req.valid("json");
+      const prisma = c.get("prisma");
+      const user = await prisma.user.findUnique({ where: { phone } });
+      if (!user) return c.json(error(null, "user not found", 404));
 
-    const passwordResult = await verifyPassword(password, user.password);
-    if (!passwordResult.valid) return c.json(error(null, "password error", 400));
+      const passwordResult = await verifyPassword(password, user.password);
+      if (!passwordResult.valid)
+        return c.json(error(null, "password error", 400));
 
-    const updateData: Prisma.UserUpdateInput = { lastLoginAt: new Date() };
-    if (passwordResult.needsRehash) {
-      updateData.password = await hashPassword(password);
-    }
+      const updateData: Prisma.UserUpdateInput = { lastLoginAt: new Date() };
+      if (passwordResult.needsRehash) {
+        updateData.password = await hashPassword(password);
+      }
 
-    const updateUser = await prisma.user.update({
-      where: { phone },
-      data: updateData,
-      select: selectUser,
-    });
-    const token = await generateToken({
-      userId: updateUser.id,
-      name: updateUser.name,
-      email: updateUser.email,
-    });
+      const updateUser = await prisma.user.update({
+        where: { phone },
+        data: updateData,
+        select: selectUser,
+      });
+      const token = await generateToken({
+        userId: updateUser.id,
+        name: updateUser.name,
+        email: updateUser.email,
+      });
 
-    c.var.logger.info({ userId: updateUser.id }, "User logged in successfully");
-    return c.json(success({ ...updateUser, token }));
-  });
+      c.var.logger.info(
+        { userId: updateUser.id },
+        "User logged in successfully",
+      );
+      return c.json(success({ ...updateUser, token }));
+    },
+  );
 
   router.post(
     "/register",
@@ -85,8 +94,11 @@ export const createUserAuthRouter = () => {
       const prisma = c.get("prisma");
       try {
         const decoded = await verifyRefreshToken(refreshToken);
-        const user = await prisma.user.findUnique({ where: { id: decoded.userId } });
-        if (!user) return c.json(error(null, "token expired or invalid", 401), 401);
+        const user = await prisma.user.findUnique({
+          where: { id: decoded.userId },
+        });
+        if (!user)
+          return c.json(error(null, "token expired or invalid", 401), 401);
 
         const token = await generateToken({
           userId: user.id,

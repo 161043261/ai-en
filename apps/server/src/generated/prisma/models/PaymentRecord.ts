@@ -129,8 +129,8 @@ export type PaymentRecordCountAggregateInputType = {
 };
 
 export type PaymentRecordAggregateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which PaymentRecord to aggregate.
@@ -205,8 +205,8 @@ export type GetPaymentRecordAggregateType<
 };
 
 export type PaymentRecordGroupByArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.PaymentRecordWhereInput;
   orderBy?:
@@ -1062,8 +1062,8 @@ export type PaymentRecordCountOutputType = {
 };
 
 export type PaymentRecordCountOutputTypeSelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   courseRecords?: boolean | PaymentRecordCountOutputTypeCountCourseRecordsArgs;
 };
@@ -1072,8 +1072,8 @@ export type PaymentRecordCountOutputTypeSelect<
  * PaymentRecordCountOutputType without action
  */
 export type PaymentRecordCountOutputTypeDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecordCountOutputType
@@ -1085,15 +1085,15 @@ export type PaymentRecordCountOutputTypeDefaultArgs<
  * PaymentRecordCountOutputType without action
  */
 export type PaymentRecordCountOutputTypeCountCourseRecordsArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.CourseRecordWhereInput;
 };
 
 export type PaymentRecordSelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1115,8 +1115,8 @@ export type PaymentRecordSelect<
 >;
 
 export type PaymentRecordSelectCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1136,8 +1136,8 @@ export type PaymentRecordSelectCreateManyAndReturn<
 >;
 
 export type PaymentRecordSelectUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1171,8 +1171,8 @@ export type PaymentRecordSelectScalar = {
 };
 
 export type PaymentRecordOmit<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetOmit<
   | "id"
   | "userId"
@@ -1188,29 +1188,29 @@ export type PaymentRecordOmit<
   ExtArgs["result"]["paymentRecord"]
 >;
 export type PaymentRecordInclude<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
   courseRecords?: boolean | Prisma.PaymentRecord$courseRecordsArgs<ExtArgs>;
   _count?: boolean | Prisma.PaymentRecordCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type PaymentRecordIncludeCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
 };
 export type PaymentRecordIncludeUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
 };
 
 export type $PaymentRecordPayload<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   name: "PaymentRecord";
   objects: {
@@ -1241,8 +1241,8 @@ export type PaymentRecordGetPayload<
 > = runtime.Types.Result.GetResult<Prisma.$PaymentRecordPayload, S>;
 
 export type PaymentRecordCountArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = Omit<
   PaymentRecordFindManyArgs,
   "select" | "include" | "distinct" | "omit"
@@ -1251,8 +1251,8 @@ export type PaymentRecordCountArgs<
 };
 
 export interface PaymentRecordDelegate<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > {
   [K: symbol]: {
@@ -1784,8 +1784,8 @@ export interface PaymentRecordDelegate<
 export interface Prisma__PaymentRecordClient<
   T,
   Null = never,
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise";
@@ -1874,8 +1874,8 @@ export interface PaymentRecordFieldRefs {
  * PaymentRecord findUnique
  */
 export type PaymentRecordFindUniqueArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -1899,8 +1899,8 @@ export type PaymentRecordFindUniqueArgs<
  * PaymentRecord findUniqueOrThrow
  */
 export type PaymentRecordFindUniqueOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -1924,8 +1924,8 @@ export type PaymentRecordFindUniqueOrThrowArgs<
  * PaymentRecord findFirst
  */
 export type PaymentRecordFindFirstArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -1983,8 +1983,8 @@ export type PaymentRecordFindFirstArgs<
  * PaymentRecord findFirstOrThrow
  */
 export type PaymentRecordFindFirstOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2042,8 +2042,8 @@ export type PaymentRecordFindFirstOrThrowArgs<
  * PaymentRecord findMany
  */
 export type PaymentRecordFindManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2101,8 +2101,8 @@ export type PaymentRecordFindManyArgs<
  * PaymentRecord create
  */
 export type PaymentRecordCreateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2129,8 +2129,8 @@ export type PaymentRecordCreateArgs<
  * PaymentRecord createMany
  */
 export type PaymentRecordCreateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to create many PaymentRecords.
@@ -2145,8 +2145,8 @@ export type PaymentRecordCreateManyArgs<
  * PaymentRecord createManyAndReturn
  */
 export type PaymentRecordCreateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2173,8 +2173,8 @@ export type PaymentRecordCreateManyAndReturnArgs<
  * PaymentRecord update
  */
 export type PaymentRecordUpdateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2205,8 +2205,8 @@ export type PaymentRecordUpdateArgs<
  * PaymentRecord updateMany
  */
 export type PaymentRecordUpdateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to update PaymentRecords.
@@ -2229,8 +2229,8 @@ export type PaymentRecordUpdateManyArgs<
  * PaymentRecord updateManyAndReturn
  */
 export type PaymentRecordUpdateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2265,8 +2265,8 @@ export type PaymentRecordUpdateManyAndReturnArgs<
  * PaymentRecord upsert
  */
 export type PaymentRecordUpsertArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2304,8 +2304,8 @@ export type PaymentRecordUpsertArgs<
  * PaymentRecord delete
  */
 export type PaymentRecordDeleteArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord
@@ -2329,8 +2329,8 @@ export type PaymentRecordDeleteArgs<
  * PaymentRecord deleteMany
  */
 export type PaymentRecordDeleteManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which PaymentRecords to delete
@@ -2346,8 +2346,8 @@ export type PaymentRecordDeleteManyArgs<
  * PaymentRecord.courseRecords
  */
 export type PaymentRecord$courseRecordsArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the CourseRecord
@@ -2377,8 +2377,8 @@ export type PaymentRecord$courseRecordsArgs<
  * PaymentRecord without action
  */
 export type PaymentRecordDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PaymentRecord

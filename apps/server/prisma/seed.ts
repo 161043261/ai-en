@@ -1,4 +1,4 @@
-import { prisma, disconnectPrisma } from "../src/shared/prisma/index.js";
+import { disconnectPrisma, prisma } from "../src/shared/prisma/index.js";
 import {
   createCourseAssetStorage,
   readCourseAsset,

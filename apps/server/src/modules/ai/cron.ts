@@ -1,11 +1,10 @@
-import cron from "node-cron";
 import { tool } from "langchain";
-import { z } from "zod";
-import { createAiAgent } from "./runtime.js";
+import cron from "node-cron";
 import { pino } from "pino";
-import { prisma } from "../../shared/prisma/index.js";
+import { z } from "zod";
 import { env } from "../../shared/config/env.js";
 import { createEmailTransport } from "../../shared/email/sender.js";
+import { prisma } from "../../shared/prisma/index.js";
 import {
   createDigestQueue,
   createDigestWorker,
@@ -18,6 +17,7 @@ import {
   isEmailDigestJobData,
   processEmailDigestJob,
 } from "./digest-service.js";
+import { createAiAgent } from "./runtime.js";
 
 const logger = pino();
 const digestQueue = createDigestQueue();

@@ -1,9 +1,4 @@
-export type DependencyName =
-  | "postgres"
-  | "redis"
-  | "minio"
-  | "ai"
-  | "payment";
+export type DependencyName = "postgres" | "redis" | "minio" | "ai" | "payment";
 
 export interface DependencyStatus {
   readonly name: DependencyName;

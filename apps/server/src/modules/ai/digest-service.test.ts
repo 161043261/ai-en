@@ -1,13 +1,13 @@
 import dayjs from "dayjs";
 import { describe, expect, test } from "vitest";
+import { digestTaskName } from "./digest-queue.js";
 import {
   buildDigestJobId,
   calculateDigestDelay,
+  type DigestQueuePort,
   enqueueDigestEmail,
   isEmailDigestJobData,
-  type DigestQueuePort,
 } from "./digest-service.js";
-import { digestTaskName } from "./digest-queue.js";
 
 describe("digest service", () => {
   test("calculates non-negative digest delivery delay", () => {

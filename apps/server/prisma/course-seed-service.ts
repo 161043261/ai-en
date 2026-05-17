@@ -3,10 +3,10 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { minioClient } from "../src/shared/utils/minio.js";
 import {
-  courseSeeds,
-  toCourseSeedData,
   type CourseSeed,
   type CourseSeedData,
+  courseSeeds,
+  toCourseSeedData,
 } from "./course-seed-data.js";
 
 const courseBucket = "course";

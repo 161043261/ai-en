@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { env, type Env } from "../../shared/config/env.js";
+import { type Env, env } from "../../shared/config/env.js";
 import { bochaSearchResponseSchema } from "./schema.js";
 
 type BochaSearchEnv = Pick<

@@ -9,9 +9,10 @@
  * 🟢 You can import this file directly.
  */
 
-import * as process from "node:process";
 import * as path from "node:path";
+import * as process from "node:process";
 import { fileURLToPath } from "node:url";
+
 globalThis["__dirname"] = path.dirname(fileURLToPath(import.meta.url));
 
 import * as runtime from "@prisma/client/runtime/client";
@@ -39,10 +40,10 @@ export * from "./enums.js";
 export const PrismaClient = $Class.getPrismaClientClass();
 export type PrismaClient<
   LogOpts extends Prisma.LogLevel = never,
-  OmitOpts extends Prisma.PrismaClientOptions["omit"] =
-    Prisma.PrismaClientOptions["omit"],
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  OmitOpts extends
+    Prisma.PrismaClientOptions["omit"] = Prisma.PrismaClientOptions["omit"],
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = $Class.PrismaClient<LogOpts, OmitOpts, ExtArgs>;
 export { Prisma };
 

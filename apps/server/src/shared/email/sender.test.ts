@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { sendEmail, type EmailTransport } from "./sender.js";
+import { type EmailTransport, sendEmail } from "./sender.js";
 
 describe("email sender", () => {
   test("returns true when transport sends mail", async () => {

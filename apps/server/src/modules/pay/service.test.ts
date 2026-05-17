@@ -3,8 +3,8 @@ import { TradeStatus } from "../../generated/prisma/client.js";
 import {
   completePaymentInTransaction,
   getPaymentStatus,
-  type PayTransactionClient,
   type PayStatusClient,
+  type PayTransactionClient,
 } from "./service.js";
 
 describe("pay service", () => {

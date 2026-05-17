@@ -93,8 +93,8 @@ export type VisitorCountAggregateInputType = {
 };
 
 export type VisitorAggregateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which Visitor to aggregate.
@@ -155,8 +155,8 @@ export type GetVisitorAggregateType<T extends VisitorAggregateArgs> = {
 };
 
 export type VisitorGroupByArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.VisitorWhereInput;
   orderBy?:
@@ -1113,8 +1113,8 @@ export type VisitorCountOutputType = {
 };
 
 export type VisitorCountOutputTypeSelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   pageViews?: boolean | VisitorCountOutputTypeCountPageViewsArgs;
   trackEvents?: boolean | VisitorCountOutputTypeCountTrackEventsArgs;
@@ -1128,8 +1128,8 @@ export type VisitorCountOutputTypeSelect<
  * VisitorCountOutputType without action
  */
 export type VisitorCountOutputTypeDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the VisitorCountOutputType
@@ -1141,8 +1141,8 @@ export type VisitorCountOutputTypeDefaultArgs<
  * VisitorCountOutputType without action
  */
 export type VisitorCountOutputTypeCountPageViewsArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.PageViewWhereInput;
 };
@@ -1151,8 +1151,8 @@ export type VisitorCountOutputTypeCountPageViewsArgs<
  * VisitorCountOutputType without action
  */
 export type VisitorCountOutputTypeCountTrackEventsArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.TrackEventWhereInput;
 };
@@ -1161,8 +1161,8 @@ export type VisitorCountOutputTypeCountTrackEventsArgs<
  * VisitorCountOutputType without action
  */
 export type VisitorCountOutputTypeCountPerformanceEntriesArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.PerformanceEntryWhereInput;
 };
@@ -1171,15 +1171,15 @@ export type VisitorCountOutputTypeCountPerformanceEntriesArgs<
  * VisitorCountOutputType without action
  */
 export type VisitorCountOutputTypeCountErrorEntriesArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.ErrorEntryWhereInput;
 };
 
 export type VisitorSelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1203,8 +1203,8 @@ export type VisitorSelect<
 >;
 
 export type VisitorSelectCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1221,8 +1221,8 @@ export type VisitorSelectCreateManyAndReturn<
 >;
 
 export type VisitorSelectUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -1250,8 +1250,8 @@ export type VisitorSelectScalar = {
 };
 
 export type VisitorOmit<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetOmit<
   | "id"
   | "anonymousId"
@@ -1264,8 +1264,8 @@ export type VisitorOmit<
   ExtArgs["result"]["visitor"]
 >;
 export type VisitorInclude<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.Visitor$userArgs<ExtArgs>;
   pageViews?: boolean | Prisma.Visitor$pageViewsArgs<ExtArgs>;
@@ -1275,21 +1275,21 @@ export type VisitorInclude<
   _count?: boolean | Prisma.VisitorCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type VisitorIncludeCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.Visitor$userArgs<ExtArgs>;
 };
 export type VisitorIncludeUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.Visitor$userArgs<ExtArgs>;
 };
 
 export type $VisitorPayload<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   name: "Visitor";
   objects: {
@@ -1320,15 +1320,15 @@ export type VisitorGetPayload<
 > = runtime.Types.Result.GetResult<Prisma.$VisitorPayload, S>;
 
 export type VisitorCountArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = Omit<VisitorFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
   select?: VisitorCountAggregateInputType | true;
 };
 
 export interface VisitorDelegate<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > {
   [K: symbol]: {
@@ -1854,8 +1854,8 @@ export interface VisitorDelegate<
 export interface Prisma__VisitorClient<
   T,
   Null = never,
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise";
@@ -1975,8 +1975,8 @@ export interface VisitorFieldRefs {
  * Visitor findUnique
  */
 export type VisitorFindUniqueArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2000,8 +2000,8 @@ export type VisitorFindUniqueArgs<
  * Visitor findUniqueOrThrow
  */
 export type VisitorFindUniqueOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2025,8 +2025,8 @@ export type VisitorFindUniqueOrThrowArgs<
  * Visitor findFirst
  */
 export type VisitorFindFirstArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2082,8 +2082,8 @@ export type VisitorFindFirstArgs<
  * Visitor findFirstOrThrow
  */
 export type VisitorFindFirstOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2139,8 +2139,8 @@ export type VisitorFindFirstOrThrowArgs<
  * Visitor findMany
  */
 export type VisitorFindManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2196,8 +2196,8 @@ export type VisitorFindManyArgs<
  * Visitor create
  */
 export type VisitorCreateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2224,8 +2224,8 @@ export type VisitorCreateArgs<
  * Visitor createMany
  */
 export type VisitorCreateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to create many Visitors.
@@ -2238,8 +2238,8 @@ export type VisitorCreateManyArgs<
  * Visitor createManyAndReturn
  */
 export type VisitorCreateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2264,8 +2264,8 @@ export type VisitorCreateManyAndReturnArgs<
  * Visitor update
  */
 export type VisitorUpdateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2296,8 +2296,8 @@ export type VisitorUpdateArgs<
  * Visitor updateMany
  */
 export type VisitorUpdateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to update Visitors.
@@ -2320,8 +2320,8 @@ export type VisitorUpdateManyArgs<
  * Visitor updateManyAndReturn
  */
 export type VisitorUpdateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2356,8 +2356,8 @@ export type VisitorUpdateManyAndReturnArgs<
  * Visitor upsert
  */
 export type VisitorUpsertArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2395,8 +2395,8 @@ export type VisitorUpsertArgs<
  * Visitor delete
  */
 export type VisitorDeleteArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor
@@ -2420,8 +2420,8 @@ export type VisitorDeleteArgs<
  * Visitor deleteMany
  */
 export type VisitorDeleteManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which Visitors to delete
@@ -2437,8 +2437,8 @@ export type VisitorDeleteManyArgs<
  * Visitor.user
  */
 export type Visitor$userArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the User
@@ -2459,8 +2459,8 @@ export type Visitor$userArgs<
  * Visitor.pageViews
  */
 export type Visitor$pageViewsArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PageView
@@ -2488,8 +2488,8 @@ export type Visitor$pageViewsArgs<
  * Visitor.trackEvents
  */
 export type Visitor$trackEventsArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -2519,8 +2519,8 @@ export type Visitor$trackEventsArgs<
  * Visitor.performanceEntries
  */
 export type Visitor$performanceEntriesArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the PerformanceEntry
@@ -2550,8 +2550,8 @@ export type Visitor$performanceEntriesArgs<
  * Visitor.errorEntries
  */
 export type Visitor$errorEntriesArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -2581,8 +2581,8 @@ export type Visitor$errorEntriesArgs<
  * Visitor without action
  */
 export type VisitorDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the Visitor

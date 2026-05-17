@@ -93,8 +93,8 @@ export type ErrorEntryCountAggregateInputType = {
 };
 
 export type ErrorEntryAggregateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which ErrorEntry to aggregate.
@@ -155,8 +155,8 @@ export type GetErrorEntryAggregateType<T extends ErrorEntryAggregateArgs> = {
 };
 
 export type ErrorEntryGroupByArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.ErrorEntryWhereInput;
   orderBy?:
@@ -630,8 +630,8 @@ export type ErrorEntryUncheckedUpdateManyWithoutVisitorInput = {
 };
 
 export type ErrorEntrySelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -648,8 +648,8 @@ export type ErrorEntrySelect<
 >;
 
 export type ErrorEntrySelectCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -666,8 +666,8 @@ export type ErrorEntrySelectCreateManyAndReturn<
 >;
 
 export type ErrorEntrySelectUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -695,8 +695,8 @@ export type ErrorEntrySelectScalar = {
 };
 
 export type ErrorEntryOmit<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetOmit<
   | "id"
   | "visitorId"
@@ -709,27 +709,27 @@ export type ErrorEntryOmit<
   ExtArgs["result"]["errorEntry"]
 >;
 export type ErrorEntryInclude<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 export type ErrorEntryIncludeCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 export type ErrorEntryIncludeUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 
 export type $ErrorEntryPayload<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   name: "ErrorEntry";
   objects: {
@@ -756,15 +756,15 @@ export type ErrorEntryGetPayload<
 > = runtime.Types.Result.GetResult<Prisma.$ErrorEntryPayload, S>;
 
 export type ErrorEntryCountArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = Omit<ErrorEntryFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
   select?: ErrorEntryCountAggregateInputType | true;
 };
 
 export interface ErrorEntryDelegate<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > {
   [K: symbol]: {
@@ -1290,8 +1290,8 @@ export interface ErrorEntryDelegate<
 export interface Prisma__ErrorEntryClient<
   T,
   Null = never,
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise";
@@ -1366,8 +1366,8 @@ export interface ErrorEntryFieldRefs {
  * ErrorEntry findUnique
  */
 export type ErrorEntryFindUniqueArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1391,8 +1391,8 @@ export type ErrorEntryFindUniqueArgs<
  * ErrorEntry findUniqueOrThrow
  */
 export type ErrorEntryFindUniqueOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1416,8 +1416,8 @@ export type ErrorEntryFindUniqueOrThrowArgs<
  * ErrorEntry findFirst
  */
 export type ErrorEntryFindFirstArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1475,8 +1475,8 @@ export type ErrorEntryFindFirstArgs<
  * ErrorEntry findFirstOrThrow
  */
 export type ErrorEntryFindFirstOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1534,8 +1534,8 @@ export type ErrorEntryFindFirstOrThrowArgs<
  * ErrorEntry findMany
  */
 export type ErrorEntryFindManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1593,8 +1593,8 @@ export type ErrorEntryFindManyArgs<
  * ErrorEntry create
  */
 export type ErrorEntryCreateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1621,8 +1621,8 @@ export type ErrorEntryCreateArgs<
  * ErrorEntry createMany
  */
 export type ErrorEntryCreateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to create many ErrorEntries.
@@ -1635,8 +1635,8 @@ export type ErrorEntryCreateManyArgs<
  * ErrorEntry createManyAndReturn
  */
 export type ErrorEntryCreateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1661,8 +1661,8 @@ export type ErrorEntryCreateManyAndReturnArgs<
  * ErrorEntry update
  */
 export type ErrorEntryUpdateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1693,8 +1693,8 @@ export type ErrorEntryUpdateArgs<
  * ErrorEntry updateMany
  */
 export type ErrorEntryUpdateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to update ErrorEntries.
@@ -1717,8 +1717,8 @@ export type ErrorEntryUpdateManyArgs<
  * ErrorEntry updateManyAndReturn
  */
 export type ErrorEntryUpdateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1753,8 +1753,8 @@ export type ErrorEntryUpdateManyAndReturnArgs<
  * ErrorEntry upsert
  */
 export type ErrorEntryUpsertArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1792,8 +1792,8 @@ export type ErrorEntryUpsertArgs<
  * ErrorEntry delete
  */
 export type ErrorEntryDeleteArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry
@@ -1817,8 +1817,8 @@ export type ErrorEntryDeleteArgs<
  * ErrorEntry deleteMany
  */
 export type ErrorEntryDeleteManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which ErrorEntries to delete
@@ -1834,8 +1834,8 @@ export type ErrorEntryDeleteManyArgs<
  * ErrorEntry without action
  */
 export type ErrorEntryDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the ErrorEntry

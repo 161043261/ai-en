@@ -81,8 +81,8 @@ export type WordBookRecordCountAggregateInputType = {
 };
 
 export type WordBookRecordAggregateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which WordBookRecord to aggregate.
@@ -145,8 +145,8 @@ export type GetWordBookRecordAggregateType<
 };
 
 export type WordBookRecordGroupByArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.WordBookRecordWhereInput;
   orderBy?:
@@ -794,8 +794,8 @@ export type WordBookRecordUncheckedUpdateManyWithoutWordInput = {
 };
 
 export type WordBookRecordSelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -811,8 +811,8 @@ export type WordBookRecordSelect<
 >;
 
 export type WordBookRecordSelectCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -828,8 +828,8 @@ export type WordBookRecordSelectCreateManyAndReturn<
 >;
 
 export type WordBookRecordSelectUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -854,37 +854,37 @@ export type WordBookRecordSelectScalar = {
 };
 
 export type WordBookRecordOmit<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetOmit<
   "id" | "wordId" | "isMaster" | "createdAt" | "updatedAt" | "userId",
   ExtArgs["result"]["wordBookRecord"]
 >;
 export type WordBookRecordInclude<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
   word?: boolean | Prisma.WordBookDefaultArgs<ExtArgs>;
 };
 export type WordBookRecordIncludeCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
   word?: boolean | Prisma.WordBookDefaultArgs<ExtArgs>;
 };
 export type WordBookRecordIncludeUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
   word?: boolean | Prisma.WordBookDefaultArgs<ExtArgs>;
 };
 
 export type $WordBookRecordPayload<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   name: "WordBookRecord";
   objects: {
@@ -910,8 +910,8 @@ export type WordBookRecordGetPayload<
 > = runtime.Types.Result.GetResult<Prisma.$WordBookRecordPayload, S>;
 
 export type WordBookRecordCountArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = Omit<
   WordBookRecordFindManyArgs,
   "select" | "include" | "distinct" | "omit"
@@ -920,8 +920,8 @@ export type WordBookRecordCountArgs<
 };
 
 export interface WordBookRecordDelegate<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > {
   [K: symbol]: {
@@ -1456,8 +1456,8 @@ export interface WordBookRecordDelegate<
 export interface Prisma__WordBookRecordClient<
   T,
   Null = never,
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise";
@@ -1544,8 +1544,8 @@ export interface WordBookRecordFieldRefs {
  * WordBookRecord findUnique
  */
 export type WordBookRecordFindUniqueArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1569,8 +1569,8 @@ export type WordBookRecordFindUniqueArgs<
  * WordBookRecord findUniqueOrThrow
  */
 export type WordBookRecordFindUniqueOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1594,8 +1594,8 @@ export type WordBookRecordFindUniqueOrThrowArgs<
  * WordBookRecord findFirst
  */
 export type WordBookRecordFindFirstArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1653,8 +1653,8 @@ export type WordBookRecordFindFirstArgs<
  * WordBookRecord findFirstOrThrow
  */
 export type WordBookRecordFindFirstOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1712,8 +1712,8 @@ export type WordBookRecordFindFirstOrThrowArgs<
  * WordBookRecord findMany
  */
 export type WordBookRecordFindManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1771,8 +1771,8 @@ export type WordBookRecordFindManyArgs<
  * WordBookRecord create
  */
 export type WordBookRecordCreateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1799,8 +1799,8 @@ export type WordBookRecordCreateArgs<
  * WordBookRecord createMany
  */
 export type WordBookRecordCreateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to create many WordBookRecords.
@@ -1815,8 +1815,8 @@ export type WordBookRecordCreateManyArgs<
  * WordBookRecord createManyAndReturn
  */
 export type WordBookRecordCreateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1843,8 +1843,8 @@ export type WordBookRecordCreateManyAndReturnArgs<
  * WordBookRecord update
  */
 export type WordBookRecordUpdateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1875,8 +1875,8 @@ export type WordBookRecordUpdateArgs<
  * WordBookRecord updateMany
  */
 export type WordBookRecordUpdateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to update WordBookRecords.
@@ -1899,8 +1899,8 @@ export type WordBookRecordUpdateManyArgs<
  * WordBookRecord updateManyAndReturn
  */
 export type WordBookRecordUpdateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1935,8 +1935,8 @@ export type WordBookRecordUpdateManyAndReturnArgs<
  * WordBookRecord upsert
  */
 export type WordBookRecordUpsertArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1974,8 +1974,8 @@ export type WordBookRecordUpsertArgs<
  * WordBookRecord delete
  */
 export type WordBookRecordDeleteArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord
@@ -1999,8 +1999,8 @@ export type WordBookRecordDeleteArgs<
  * WordBookRecord deleteMany
  */
 export type WordBookRecordDeleteManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which WordBookRecords to delete
@@ -2016,8 +2016,8 @@ export type WordBookRecordDeleteManyArgs<
  * WordBookRecord without action
  */
 export type WordBookRecordDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the WordBookRecord

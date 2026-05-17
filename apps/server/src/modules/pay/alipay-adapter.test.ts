@@ -28,7 +28,7 @@ class MockAlipaySdk implements AlipaySdkLike {
 }
 
 const pagePayInput = {
-  body: "{\"courseId\":\"course-1\",\"userId\":\"user-1\"}",
+  body: '{"courseId":"course-1","userId":"user-1"}',
   notifyUrl: "https://api.example.com/api/v1/pay/notify",
   outTradeNo: "lark-order-1",
   subject: "Course",
@@ -40,7 +40,7 @@ describe("Alipay adapter", () => {
   test("creates page pay params for the legacy Alipay trade API", () => {
     expect(createAlipayPagePayParams(pagePayInput)).toEqual({
       bizContent: {
-        body: "{\"courseId\":\"course-1\",\"userId\":\"user-1\"}",
+        body: '{"courseId":"course-1","userId":"user-1"}',
         out_trade_no: "lark-order-1",
         product_code: "FAST_INSTANT_TRADE_PAY",
         subject: "Course",

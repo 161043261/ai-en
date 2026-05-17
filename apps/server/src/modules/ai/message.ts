@@ -14,8 +14,9 @@ const messageChunkSchema = z.object({
 export const parseMessageChunk = (value: unknown) =>
   messageChunkSchema.safeParse(value);
 
-export const getMessageText = (content: string | readonly unknown[] | undefined) =>
-  typeof content === "string" ? content : "";
+export const getMessageText = (
+  content: string | readonly unknown[] | undefined,
+) => (typeof content === "string" ? content : "");
 
 export const toHistoryItem = (value: unknown) => {
   const result = parseMessageChunk(value);

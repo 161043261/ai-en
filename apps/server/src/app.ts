@@ -1,11 +1,6 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { pinoLogger } from "hono-pino";
-import {
-  createReadinessReport,
-  defaultReadinessChecks,
-  type ReadinessCheck,
-} from "./operations/readiness.js";
 import aiRouter from "./modules/ai/index.js";
 import courseRouter from "./modules/course/index.js";
 import learnRouter from "./modules/learn/index.js";
@@ -13,6 +8,11 @@ import payRouter from "./modules/pay/index.js";
 import trackerRouter from "./modules/tracker/index.js";
 import userRouter from "./modules/user/index.js";
 import wordBookRouter from "./modules/word-book/index.js";
+import {
+  createReadinessReport,
+  defaultReadinessChecks,
+  type ReadinessCheck,
+} from "./operations/readiness.js";
 import { env } from "./shared/config/env.js";
 import { requestIdMiddleware } from "./shared/middleware/request-id.js";
 import { error, success } from "./shared/utils/response.js";

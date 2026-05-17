@@ -83,8 +83,8 @@ export type TrackEventCountAggregateInputType = {
 };
 
 export type TrackEventAggregateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which TrackEvent to aggregate.
@@ -145,8 +145,8 @@ export type GetTrackEventAggregateType<T extends TrackEventAggregateArgs> = {
 };
 
 export type TrackEventGroupByArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   where?: Prisma.TrackEventWhereInput;
   orderBy?:
@@ -589,8 +589,8 @@ export type TrackEventUncheckedUpdateManyWithoutVisitorInput = {
 };
 
 export type TrackEventSelect<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -606,8 +606,8 @@ export type TrackEventSelect<
 >;
 
 export type TrackEventSelectCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -623,8 +623,8 @@ export type TrackEventSelectCreateManyAndReturn<
 >;
 
 export type TrackEventSelectUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
@@ -650,34 +650,34 @@ export type TrackEventSelectScalar = {
 };
 
 export type TrackEventOmit<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = runtime.Types.Extensions.GetOmit<
   "id" | "visitorId" | "event" | "payload" | "url" | "createdAt" | "updatedAt",
   ExtArgs["result"]["trackEvent"]
 >;
 export type TrackEventInclude<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 export type TrackEventIncludeCreateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 export type TrackEventIncludeUpdateManyAndReturn<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   visitor?: boolean | Prisma.VisitorDefaultArgs<ExtArgs>;
 };
 
 export type $TrackEventPayload<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   name: "TrackEvent";
   objects: {
@@ -703,15 +703,15 @@ export type TrackEventGetPayload<
 > = runtime.Types.Result.GetResult<Prisma.$TrackEventPayload, S>;
 
 export type TrackEventCountArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = Omit<TrackEventFindManyArgs, "select" | "include" | "distinct" | "omit"> & {
   select?: TrackEventCountAggregateInputType | true;
 };
 
 export interface TrackEventDelegate<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > {
   [K: symbol]: {
@@ -1237,8 +1237,8 @@ export interface TrackEventDelegate<
 export interface Prisma__TrackEventClient<
   T,
   Null = never,
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise";
@@ -1312,8 +1312,8 @@ export interface TrackEventFieldRefs {
  * TrackEvent findUnique
  */
 export type TrackEventFindUniqueArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1337,8 +1337,8 @@ export type TrackEventFindUniqueArgs<
  * TrackEvent findUniqueOrThrow
  */
 export type TrackEventFindUniqueOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1362,8 +1362,8 @@ export type TrackEventFindUniqueOrThrowArgs<
  * TrackEvent findFirst
  */
 export type TrackEventFindFirstArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1421,8 +1421,8 @@ export type TrackEventFindFirstArgs<
  * TrackEvent findFirstOrThrow
  */
 export type TrackEventFindFirstOrThrowArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1480,8 +1480,8 @@ export type TrackEventFindFirstOrThrowArgs<
  * TrackEvent findMany
  */
 export type TrackEventFindManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1539,8 +1539,8 @@ export type TrackEventFindManyArgs<
  * TrackEvent create
  */
 export type TrackEventCreateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1567,8 +1567,8 @@ export type TrackEventCreateArgs<
  * TrackEvent createMany
  */
 export type TrackEventCreateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to create many TrackEvents.
@@ -1581,8 +1581,8 @@ export type TrackEventCreateManyArgs<
  * TrackEvent createManyAndReturn
  */
 export type TrackEventCreateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1607,8 +1607,8 @@ export type TrackEventCreateManyAndReturnArgs<
  * TrackEvent update
  */
 export type TrackEventUpdateArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1639,8 +1639,8 @@ export type TrackEventUpdateArgs<
  * TrackEvent updateMany
  */
 export type TrackEventUpdateManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * The data used to update TrackEvents.
@@ -1663,8 +1663,8 @@ export type TrackEventUpdateManyArgs<
  * TrackEvent updateManyAndReturn
  */
 export type TrackEventUpdateManyAndReturnArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1699,8 +1699,8 @@ export type TrackEventUpdateManyAndReturnArgs<
  * TrackEvent upsert
  */
 export type TrackEventUpsertArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1738,8 +1738,8 @@ export type TrackEventUpsertArgs<
  * TrackEvent delete
  */
 export type TrackEventDeleteArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent
@@ -1763,8 +1763,8 @@ export type TrackEventDeleteArgs<
  * TrackEvent deleteMany
  */
 export type TrackEventDeleteManyArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Filter which TrackEvents to delete
@@ -1780,8 +1780,8 @@ export type TrackEventDeleteManyArgs<
  * TrackEvent without action
  */
 export type TrackEventDefaultArgs<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
 > = {
   /**
    * Select specific fields to fetch from the TrackEvent

@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { aiProviderSchema } from "../shared/config/env.js";
+import type { z } from "zod";
+import type { aiProviderSchema } from "../shared/config/env.js";
 
 export type StagingAiProvider = z.infer<typeof aiProviderSchema>;
 

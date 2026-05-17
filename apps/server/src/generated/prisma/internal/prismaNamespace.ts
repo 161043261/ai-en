@@ -259,7 +259,9 @@ export type PatchUndefined<O extends object, O1 extends object> = {
 
 /** Helper Types for "Merge" **/
 export type IntersectOf<U extends Union> = (
-  U extends unknown ? (k: U) => void : never
+  U extends unknown
+    ? (k: U) => void
+    : never
 ) extends (k: infer I) => void
   ? I
   : never;
@@ -427,17 +429,17 @@ export const ModelName = {
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 
-export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils
-  .Fn<
-  { extArgs: runtime.Types.Extensions.InternalArgs },
-  runtime.Types.Utils.Record<string, any>
-> {
+export interface TypeMapCb<GlobalOmitOptions = {}>
+  extends runtime.Types.Utils.Fn<
+    { extArgs: runtime.Types.Extensions.InternalArgs },
+    runtime.Types.Utils.Record<string, any>
+  > {
   returns: TypeMap<this["params"]["extArgs"], GlobalOmitOptions>;
 }
 
 export type TypeMap<
-  ExtArgs extends runtime.Types.Extensions.InternalArgs =
-    runtime.Types.Extensions.DefaultArgs,
+  ExtArgs extends
+    runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs,
   GlobalOmitOptions = {},
 > = {
   globalOmitOptions: {
