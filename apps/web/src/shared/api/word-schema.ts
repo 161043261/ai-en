@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+const nullableTextSchema = z.string().nullable().optional();
+const nullableFlagSchema = z.boolean().nullable().optional();
+
 export const WordQuerySchema = z.object({
   cet4: z.boolean().optional(),
   cet6: z.boolean().optional(),
@@ -15,28 +18,28 @@ export const WordQuerySchema = z.object({
 });
 
 export const WordSchema = z.object({
-  bnc: z.string().optional(),
-  cet4: z.boolean().optional(),
-  cet6: z.boolean().optional(),
-  collins: z.string().optional(),
+  bnc: nullableTextSchema,
+  cet4: nullableFlagSchema,
+  cet6: nullableFlagSchema,
+  collins: nullableTextSchema,
   createdAt: z.string(),
-  definition: z.string().optional(),
-  exchange: z.string().optional(),
-  frq: z.string().optional(),
-  gk: z.boolean().optional(),
-  gre: z.boolean().optional(),
+  definition: nullableTextSchema,
+  exchange: nullableTextSchema,
+  frq: nullableTextSchema,
+  gk: nullableFlagSchema,
+  gre: nullableFlagSchema,
   id: z.string(),
-  ielts: z.boolean().optional(),
-  ky: z.boolean().optional(),
-  oxford: z.string().optional(),
-  phonetic: z.string().optional(),
-  pos: z.string().optional(),
-  tag: z.string().optional(),
-  toefl: z.boolean().optional(),
-  translation: z.string().optional(),
+  ielts: nullableFlagSchema,
+  ky: nullableFlagSchema,
+  oxford: nullableTextSchema,
+  phonetic: nullableTextSchema,
+  pos: nullableTextSchema,
+  tag: nullableTextSchema,
+  toefl: nullableFlagSchema,
+  translation: nullableTextSchema,
   updatedAt: z.string(),
   word: z.string(),
-  zk: z.boolean().optional(),
+  zk: nullableFlagSchema,
 });
 
 export const WordListSchema = z.object({

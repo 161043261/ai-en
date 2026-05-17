@@ -23,9 +23,11 @@ describe("createApiClient", () => {
       timeoutMs: 1000,
     });
 
-    await expect(client.get("/api/v1/health", ResponseSchema)).resolves.toEqual({
-      value: "ok",
-    });
+    await expect(client.get("/api/v1/health", ResponseSchema)).resolves.toEqual(
+      {
+        value: "ok",
+      },
+    );
   });
 
   test("wraps network failures", async () => {
@@ -51,6 +53,54 @@ describe("createApiClient", () => {
     await expect(
       client.get("/api/v1/health", ResponseSchema),
     ).rejects.toBeInstanceOf(HttpRequestError);
+  });
+
+  test("uses server error envelope messages before success schema parsing", async () => {
+    const client = createApiClient({
+      baseUrl: "/api",
+      fetchImpl: vi.fn().mockResolvedValue(
+        jsonResponse({
+          code: 400,
+          data: null,
+          message: "phone already exists",
+          ok: false,
+          timestamp: Date.now(),
+        }),
+      ),
+      timeoutMs: 1000,
+    });
+
+    await expect(client.post("/user/register", ResponseSchema)).rejects.toEqual(
+      expect.objectContaining({
+        message: "phone already exists",
+        status: 400,
+      }),
+    );
+  });
+
+  test("uses response body messages for HTTP failures", async () => {
+    const client = createApiClient({
+      baseUrl: "/api",
+      fetchImpl: vi.fn().mockResolvedValue(
+        jsonResponse(
+          {
+            code: 500,
+            data: null,
+            message: "internal server error",
+            timestamp: Date.now(),
+          },
+          { status: 500 },
+        ),
+      ),
+      timeoutMs: 1000,
+    });
+
+    await expect(client.get("/api/v1/ready", ResponseSchema)).rejects.toEqual(
+      expect.objectContaining({
+        message: "internal server error",
+        status: 500,
+      }),
+    );
   });
 
   test("refreshes access tokens and retries one auth failure", async () => {

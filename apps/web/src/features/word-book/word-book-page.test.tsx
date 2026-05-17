@@ -22,13 +22,28 @@ const testConfig: AppConfig = {
 };
 
 const word = {
+  bnc: "9999",
+  cet4: false,
+  cet6: false,
+  collins: "2",
   createdAt: "2026-05-17T00:00:00.000Z",
   definition: "Artificial intelligence.",
+  exchange: null,
+  frq: "9999",
+  gk: false,
   gre: true,
   id: "word-1",
+  ielts: false,
+  ky: false,
+  oxford: null,
+  phonetic: "ei ai",
+  pos: null,
+  tag: "gre",
+  toefl: true,
   translation: "<strong>AI</strong>",
   updatedAt: "2026-05-17T00:00:00.000Z",
   word: "ai",
+  zk: false,
 };
 
 function successResponse(data: unknown): Response {
@@ -37,9 +52,8 @@ function successResponse(data: unknown): Response {
       code: 200,
       data,
       message: "ok",
-      path: "/word-book",
-      success: true,
-      timestamp: "2026-05-17T00:00:00.000Z",
+      ok: true,
+      timestamp: Date.now(),
     }),
     { headers: { "Content-Type": "application/json" }, status: 200 },
   );

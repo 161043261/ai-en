@@ -1,5 +1,10 @@
 import { z } from "zod";
 import { fetchResponse, type RequestMethod } from "./fetch-response";
+import {
+  getApiErrorEnvelope,
+  getHttpErrorMessage,
+  readJsonResponse,
+} from "./http-error-response";
 import { HttpRequestError, NetworkRequestError } from "./http-error";
 import type { ApiClientOptions, RequestOptions } from "./http-client-types";
 import type { RefreshQueue } from "./refresh-queue";
@@ -47,11 +52,20 @@ export function createRequestExecutor(
         return run(method, path, schema, requestOptions, nextToken, true);
       }
 
-      if (!response.ok) {
-        throw new HttpRequestError(response.statusText, response.status);
+      const responseBody = await readJsonResponse(response);
+      const errorEnvelope = getApiErrorEnvelope(responseBody);
+      if (errorEnvelope) {
+        throw new HttpRequestError(errorEnvelope.message, errorEnvelope.code);
       }
 
-      return schema.parse(await response.json());
+      if (!response.ok) {
+        throw new HttpRequestError(
+          getHttpErrorMessage(response, responseBody),
+          response.status,
+        );
+      }
+
+      return schema.parse(responseBody);
     } catch (error) {
       if (error instanceof HttpRequestError || error instanceof z.ZodError) {
         throw error;
