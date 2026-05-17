@@ -1,0 +1,23 @@
+{
+  "skill_name": "daisyui",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "In my Vite React app with Tailwind CSS 4, install daisyUI 5 and create a responsive pricing card using daisyUI classes instead of custom CSS.",
+      "expected_output": "Uses Tailwind CSS 4 plugin syntax, installs daisyUI as a dependency, and composes the pricing card with documented daisyUI card, button, badge, and layout classes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Review this JSX for daisyUI correctness: it has a modal, dropdown, table, and theme switcher. Point out daisyUI 5 class or theme mistakes and suggest fixes.",
+      "expected_output": "Checks component classes against daisyUI 5, verifies data-theme and theme-controller usage, and gives concrete class-level corrections without inventing unsupported classes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I am upgrading a Tailwind CSS 4 project from daisyUI 4 to daisyUI 5. Explain what config changes I should make and what UI class patterns I should audit.",
+      "expected_output": "Mentions that tailwind.config.js is deprecated for Tailwind CSS 4 setup, uses @plugin \"daisyui\" in CSS, and identifies component, theme, and specificity audit points.",
+      "files": []
+    }
+  ]
+}

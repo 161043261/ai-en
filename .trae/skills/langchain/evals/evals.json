@@ -1,0 +1,41 @@
+{
+  "skill_name": "langchain",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "In a TypeScript Node project, add a LangChain chat chain that validates an incoming question with zod, builds a ChatPromptTemplate, and lets tests inject a fake chat model. Keep strict TypeScript enabled.",
+      "expected_output": "A strict TypeScript implementation with zod validation, separated chain construction, injectable model dependency, and focused tests.",
+      "files": [],
+      "expectations": [
+        "Uses zod for runtime input validation",
+        "Avoids explicit any, non-null assertions, and suppressions",
+        "Separates chain construction from invocation",
+        "Includes or recommends focused tests with an injectable fake model"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review this LangGraph.js TypeScript design for an agent with a retriever node, a tool node, and a final answer node. Point out risks around state typing, routing, persistence, and LangSmith tracing.",
+      "expected_output": "A review focused on LangGraph state typing, deterministic routing, injectable checkpointers, retriever/tool boundaries, and safe LangSmith tracing.",
+      "files": [],
+      "expectations": [
+        "Prioritizes concrete findings before general advice",
+        "Covers state typing and routing risks",
+        "Mentions persistence or checkpointer testability",
+        "Mentions LangSmith trace safety when tracing is present"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I need current docs for LangSmith Agent Server thread runs and streaming from our local LangChain docs index. Find the right official links and summarize what to read first.",
+      "expected_output": "A documentation-oriented answer that searches llms.txt, identifies relevant official docs links, and summarizes the recommended reading order.",
+      "files": ["llms.txt"],
+      "expectations": [
+        "Uses llms.txt as the first documentation index",
+        "Returns official LangChain documentation links",
+        "Focuses on thread runs and streaming",
+        "Avoids inventing undocumented API details"
+      ]
+    }
+  ]
+}

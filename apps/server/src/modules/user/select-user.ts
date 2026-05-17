@@ -1,0 +1,16 @@
+export const selectUser = {
+  id: true,
+  name: true,
+  email: true,
+  phone: true,
+  address: true,
+  avatar: true,
+  bio: true,
+  isTimingTask: true,
+  timingTaskTime: true,
+  wordNumber: true,
+  dayNumber: true,
+  createdAt: true,
+  updatedAt: true,
+  lastLoginAt: true,
+} as const;

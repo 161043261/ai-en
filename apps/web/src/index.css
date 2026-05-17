@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@keyframes word-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes word-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
