@@ -22,7 +22,7 @@ export function createChatEndpoints(client: ApiClient): ChatEndpoints {
   return {
     getChatHistory: async (userId, role) => {
       const response = await client.get(
-        "/chat/history",
+        "/ai/chat/history",
         createResponseSchema(ChatMessageListSchema),
         {
           params: createQueryParams({
@@ -35,7 +35,7 @@ export function createChatEndpoints(client: ApiClient): ChatEndpoints {
     },
     getChatMode: async () => {
       const response = await client.get(
-        "/prompt/list",
+        "/ai/prompt/list",
         createResponseSchema(ChatModeListSchema),
       );
       return response.data;

@@ -4,7 +4,6 @@ import { parseProviderEnv } from "./provider-env";
 describe("parseProviderEnv", () => {
   test("uses documented defaults when provider values are missing", () => {
     expect(parseProviderEnv({})).toEqual({
-      aiApiBaseUrl: "/ai/v1",
       dataProvider: "swr",
       requestTimeoutMs: 50_000,
       routerProvider: "react-router",
@@ -17,7 +16,6 @@ describe("parseProviderEnv", () => {
   test("accepts every supported provider branch", () => {
     expect(
       parseProviderEnv({
-        AI_API_BASE_URL: "/custom-ai",
         REQUEST_TIMEOUT_MS: "1000",
         ROUTER_PROVIDER: "tanstack",
         SERVER_API_BASE_URL: "/custom-server",
@@ -26,7 +24,6 @@ describe("parseProviderEnv", () => {
         SWR_PROVIDER: "tanstack",
       }),
     ).toEqual({
-      aiApiBaseUrl: "/custom-ai",
       dataProvider: "tanstack",
       requestTimeoutMs: 1000,
       routerProvider: "tanstack",

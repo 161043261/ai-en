@@ -1,0 +1,7 @@
+[project]
+name = "ai-en"
+version = "0.1.0"
+description = "AI English"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["requests", "types-requests"]

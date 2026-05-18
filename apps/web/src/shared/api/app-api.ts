@@ -31,7 +31,7 @@ export type AppApi = {
 export function createAppApi(clients: ApiClients): AppApi {
   return {
     auth: createAuthEndpoints(clients.refresh),
-    chat: createChatEndpoints(clients.ai),
+    chat: createChatEndpoints(clients.server),
     course: createCourseEndpoints(clients.server),
     learn: createLearnEndpoints(clients.server),
     pay: createPayEndpoints(clients.server),

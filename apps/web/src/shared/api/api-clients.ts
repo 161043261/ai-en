@@ -5,7 +5,6 @@ import { createResponseSchema } from "./response-schema";
 import { TokenSchema } from "./user-schema";
 
 export type ApiClients = {
-  readonly ai: ApiClient;
   readonly refresh: ApiClient;
   readonly server: ApiClient;
 };
@@ -29,10 +28,6 @@ export function createApiClients(options: ApiClientsOptions): ApiClients {
   });
 
   return {
-    ai: createApiClient({
-      ...sharedOptions,
-      baseUrl: options.config.aiApiBaseUrl,
-    }),
     refresh,
     server: createApiClient({
       ...sharedOptions,

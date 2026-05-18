@@ -2,7 +2,6 @@ import { z } from "zod";
 
 const ProviderEnvSchema = z
   .object({
-    AI_API_BASE_URL: z.string().min(1).default("/ai/v1"),
     ROUTER_PROVIDER: z
       .enum(["react-router", "tanstack"])
       .default("react-router"),
@@ -13,7 +12,6 @@ const ProviderEnvSchema = z
     SOCKET_BASE_URL: z.string().min(1).default("http://localhost:3000"),
   })
   .transform((value) => ({
-    aiApiBaseUrl: value.AI_API_BASE_URL,
     dataProvider: value.SWR_PROVIDER,
     requestTimeoutMs: value.REQUEST_TIMEOUT_MS,
     routerProvider: value.ROUTER_PROVIDER,

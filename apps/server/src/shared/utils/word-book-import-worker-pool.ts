@@ -28,7 +28,7 @@ export class WordBookImportWorker {
 
   constructor() {
     this.worker = new Worker(
-      new URL("../../scripts/word-book-import-worker.ts", import.meta.url),
+      new URL("./word-book-import-worker.ts", import.meta.url),
       { execArgv: ["--import", "tsx"] },
     );
     this.worker.on("message", (message: unknown) => {

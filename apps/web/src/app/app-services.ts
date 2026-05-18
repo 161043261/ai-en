@@ -38,7 +38,7 @@ export function createAppServices(options: AppServicesOptions): AppServices {
   return {
     api: createAppApi(apiClients),
     apiClients,
-    chatStream: createChatStream({ baseUrl: options.config.aiApiBaseUrl }),
+    chatStream: createChatStream({ baseUrl: options.config.serverApiBaseUrl }),
     config: options.config,
     session,
     socketLifecycle: createSocketLifecycle({
