@@ -56,7 +56,7 @@ export default defineConfig({
     },
   },
 
-  optimizeDeps: {
-    exclude: ["lark-sentry"],
-  },
+  // optimizeDeps: {
+  //   exclude: ["lark-sentry"],
+  // },
 });
