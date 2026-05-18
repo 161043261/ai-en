@@ -1,5 +1,3 @@
-// @ts-check
-
 // DO NOT MODIFY
 import js from "@eslint/js";
 import globals from "globals";
@@ -10,7 +8,13 @@ import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(["dist", "public/mockServiceWorker.js", "storybook-static"]),
+  globalIgnores([
+    "./dist",
+    "./logs",
+    "./node_modules",
+    "./public",
+    "./storybook-static",
+  ]),
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
