@@ -2,7 +2,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vitest/config";
 import { fileURLToPath } from "node:url";
-import sentry from "./vite-plugin-sentry";
+import { sentryPlugin } from "@lark-sentry/core/vite";
 
 function getManualChunk(id: string) {
   if (!id.includes("node_modules")) return undefined;
@@ -33,7 +33,13 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react(), tailwindcss(), sentry()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    sentryPlugin({
+      url: "/sentry",
+    }),
+  ],
   server: {
     port: 5173,
     proxy: {

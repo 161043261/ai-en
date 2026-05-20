@@ -169,8 +169,8 @@ importers:
         specifier: workspace:*
         version: link:../common
       '@lark-sentry/core':
-        specifier: 1.0.4
-        version: 1.0.4(react@19.2.6)(vue@3.5.31(typescript@5.8.3))
+        specifier: 1.0.7
+        version: 1.0.7(react@19.2.6)(vite@7.3.3(@types/node@24.12.4)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)(tsx@4.22.1)(yaml@2.8.3))(vue@3.5.31(typescript@5.8.3))
       '@microsoft/fetch-event-source':
         specifier: ^2.0.1
         version: 2.0.1
@@ -1121,13 +1121,16 @@ packages:
   '@langchain/protocol@0.0.15':
     resolution: {integrity: sha512-MllvbpMjqHevUm+v94M422mH7XKN+wGCvJRBVROTWBotEDOATYB4Ktk2UheYP859y9o2LlhtPek5t1T9eyfAbQ==}
 
-  '@lark-sentry/core@1.0.4':
-    resolution: {integrity: sha512-pj9zurtniQOLqk51ZGSjP6WTROkwuOoiWJl9GAStXbqNgq+rA0KML03ZJIfGFp4g5YSlYGLgW2g40boahl5UoA==}
+  '@lark-sentry/core@1.0.7':
+    resolution: {integrity: sha512-TnkBm3ebXlL9OqDDkTsKQV0Y43xG6ufqEDPt+NiHIGC/337nVgNMMNqAKljVp8yfkQuGOUTEesmHtJWBXkZ/nQ==}
     peerDependencies:
-      react: ^19.2.3
-      vue: ^3.5.26
+      react: ^19.0.0
+      vite: ^7.0.0 || ^8.0.0
+      vue: ^3.0.0
     peerDependenciesMeta:
       react:
+        optional: true
+      vite:
         optional: true
       vue:
         optional: true
@@ -5011,9 +5014,6 @@ packages:
     peerDependencies:
       zod: ^3.25.28 || ^4
 
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
-
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
@@ -5731,17 +5731,17 @@ snapshots:
 
   '@langchain/protocol@0.0.15': {}
 
-  '@lark-sentry/core@1.0.4(react@19.2.6)(vue@3.5.31(typescript@5.8.3))':
+  '@lark-sentry/core@1.0.7(react@19.2.6)(vite@7.3.3(@types/node@24.12.4)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)(tsx@4.22.1)(yaml@2.8.3))(vue@3.5.31(typescript@5.8.3))':
     dependencies:
       '@fingerprintjs/fingerprintjs': 5.2.0
       '@rrweb/record': 2.0.0-alpha.20
       pako: 2.1.0
-      tslib: 2.8.1
       ua-parser-js: 2.0.9
       web-vitals: 5.2.0
-      zod: 3.25.76
+      zod: 4.4.3
     optionalDependencies:
       react: 19.2.6
+      vite: 7.3.3(@types/node@24.12.4)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)(tsx@4.22.1)(yaml@2.8.3)
       vue: 3.5.31(typescript@5.8.3)
 
   '@microsoft/fetch-event-source@2.0.1': {}
@@ -9595,8 +9595,6 @@ snapshots:
     dependencies:
       zod: 4.4.3
     optional: true
-
-  zod@3.25.76: {}
 
   zod@4.4.3: {}
 
