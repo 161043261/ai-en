@@ -1,2 +1,10 @@
 packages:
   - apps/*
+allowBuilds:
+  '@prisma/engines': true
+  esbuild: true
+  msgpackr-extract: true
+  msw: true
+  prisma: true
+minimumReleaseAgeExclude:
+  - '@lark.js/sentry@0.0.1'

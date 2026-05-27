@@ -4,14 +4,14 @@ import "./index.css";
 import { parseProviderEnv } from "./shared/config";
 import { ErrorState } from "./shared/ui";
 
-import { init, pluginEnable } from "@lark-sentry/core";
-import PerformancePlugin from "@lark-sentry/core/plugins/perf";
-import ScreenRecordPlugin from "@lark-sentry/core/plugins/record";
-import ExposurePlugin from "@lark-sentry/core/plugins/exposure";
+import { init, pluginEnable } from "@lark.js/sentry";
+import PerformancePlugin from "@lark.js/sentry/plugins/perf";
+import ScreenRecordPlugin from "@lark.js/sentry/plugins/record";
+import ExposurePlugin from "@lark.js/sentry/plugins/exposure";
 import {
   ReactErrorBoundary,
   type ReactErrorBoundaryProps,
-} from "@lark-sentry/core/react";
+} from "@lark.js/sentry/react";
 
 if (!import.meta.env.DEV) {
   init({ dsn: "/sentry", visitorId: "" });
